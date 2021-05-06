@@ -1,17 +1,18 @@
 import React, { useState } from 'react'
+import LogoSide from '../images/logo.png'
 import './SideBar.css'
 import * as faIcons from 'react-icons/fa'
 import * as FiIcons from 'react-icons/fi'
 import * as aiIcons from 'react-icons/cg'
 import { SideBarData } from './SideBarData'
 import { IconContext } from 'react-icons/lib'
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { auth } from '../firebase/firebase';
 
 function SideBar() {
     const [sidebar, setSidebar] = useState(false);
     const showSideBar = () => setSidebar(!sidebar);
-    const history = useHistory();
+    // const history = useHistory();
     return (
         <>
             <IconContext.Provider value={{}}>
@@ -19,7 +20,7 @@ function SideBar() {
                     <Link to='#' className='side-menuBars'>
                         <faIcons.FaBars onClick={showSideBar} />
                     </Link>
-                    <img alt="logo" src='../images/logo1 - Copy.png' className="nav-logo" />
+                    <img alt="logo" src={LogoSide} className="nav-logo" />
                     <div className="userLogIn">
                         <Link to='/' className='side-menuBars'><FiIcons.FiLogOut onClick={() =>{
                             auth.signOut();
