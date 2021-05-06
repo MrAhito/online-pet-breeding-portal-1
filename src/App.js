@@ -7,7 +7,6 @@ import Dashboard from './pages/Dashboard';
 function App() {
   return (
     <>
-    <div>awd</div>
       <Router>
         <Switch>
           <Route path='/' exact component={HomePage} />
