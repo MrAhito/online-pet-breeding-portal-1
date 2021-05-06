@@ -1,8 +1,8 @@
 import './App.css';
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-// import HomePage from './pages/HomePage';
-// import Dashboard from './pages/Dashboard';
+import HomePage from './pages/HomePage';
+import Dashboard from './pages/Dashboard';
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
     <div>awd</div>
       <Router>
         <Switch>
-          // <Route path='/' exact component={HomePage} />
+          <Route path='/' exact component={HomePage} />
         </Switch>
         <Switch>
         </Switch>
