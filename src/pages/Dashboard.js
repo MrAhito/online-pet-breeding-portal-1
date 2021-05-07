@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import SideBar from '../components/SideBar'
+import AdminDash from './pages/Admin_Dash';
+import AdmPost from './pages/Adm_post';
+import AdmMessage from './pages/Adm_Message';
+import AdmTeam from './pages/Adm_Team';
+import AdmReport from './pages/Adm_Report';
 class Dashboard extends Component {
     render() {
         return (
