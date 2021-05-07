@@ -3,7 +3,7 @@ import * as aiIcons from 'react-icons/cg'
 import { Link, useHistory } from "react-router-dom";
 import './Login.css'
 import { auth } from '../firebase/firebase';
-// import RegUserForm from './RegUserForm';
+import RegUserForm from './RegUserForm';
 
 function Login() {
     const emailRef = useRef();
@@ -61,7 +61,7 @@ function Login() {
                         </Link>
                         <h1 className='tittle-reeg'>Register</h1>
                     </div>
-                {/*<RegUserForm />*/}
+                <RegUserForm />
                 </div>
             </div>
         </>
