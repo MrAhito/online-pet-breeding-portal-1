@@ -17,17 +17,13 @@ function App() {
         </Switch>
             <Switch>
                 <Route path='/dashboard' exact component={Dashboard} />
-            </Switch>
-            <Switch>
+         
                 <Route path='/post' exact component={AdmPost} />
-            </Switch>
-            <Switch>
+          
                 <Route path='/messages' exact component={AdmMessage} />
-            </Switch>
-            <Switch>
+            
                 <Route path='/team' exact component={AdmTeam} />
-            </Switch>
-            <Switch>
+          
                 <Route path='/reports' exact component={AdmReport} />
             </Switch>
     </Router>
