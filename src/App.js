@@ -2,26 +2,75 @@ import './App.css';
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import HomePage from './pages/HomePage';
-import Dashboard from './pages/Dashboard';
-import Admin_Dash from './pages/Admin_Dash';
-import Adm_post from './pages/Adm_post';
-import Adm_Message from './pages/Adm_Message';
-import Adm_Team from './pages/Adm_Team';
-import Adm_Report from './pages/Adm_Report';
-
+import SideBar from './components/SideBar';
+import AdminDash from './pages/Admin_Dash';
+import AdmPost from './pages/Adm_post';
+import AdmMessage from './pages/Adm_Message';
+import AdmTeam from './pages/Adm_Team';
+import AdmReport from './pages/Adm_Report';
 function App() {
+
+const routes =[
+  {
+    path: "/dashboard",
+    exact: true,
+    sidebar: () => <SideBar/>,
+  },
+  {
+    path: "/post",
+    exact: true,
+    sidebar: () => <SideBar/>,
+  },
+  {
+    path: "/messages",
+    exact: true,
+    sidebar: () => <SideBar/>,
+  },
+  {
+    path: "/team",
+    exact: true,
+    sidebar: () => <SideBar/>,
+  },
+  {
+    path: "/reports",
+    exact: true,
+    sidebar: () => <SideBar/>,
+  },
+]
+
   return (
     <>
       <Router>
         <Switch>
           <Route path='/' exact component={HomePage} />
-          <Route path='/dashboard' exact component={Admin_Dash} />
-          <Route path='/post' exact component={Adm_post} />
-          <Route path='/messages' exact component={Adm_Message} />
-          <Route path='/team' exact component={Adm_Team} />
-          <Route path='/reports' exact component={Adm_Report} />
         </Switch>
-      </Router>
+
+       <Switch>
+         {routes.map((route, index) => (
+           <Route 
+           key={index}
+          path = {route.path}
+          exact = {route.exact}
+          children = {<route.sidebar/>}
+          />
+         ))}
+       </Switch>
+       <Switch>
+                <Route path='/dashboard' exact component={AdminDash} />
+            </Switch>
+            <Switch>
+                <Route path='/post' exact component={AdmPost} />
+            </Switch>
+            <Switch>
+                <Route path='/messages' exact component={AdmMessage} />
+            </Switch>
+            <Switch>
+                <Route path='/team' exact component={AdmTeam} />
+            </Switch>
+            <Switch>
+                <Route path='/reports' exact component={AdmReport} />
+            </Switch>
+    </Router>
     </>
   );
 }
