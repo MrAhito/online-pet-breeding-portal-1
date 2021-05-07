@@ -1,15 +1,16 @@
-import React, { Component } from 'react'
+import SideBar from './SideBar'
+import React from 'react'
 
-class Admin_Dash extends Component {
-    render() {
+function Admin_Dash() {
+
         return (
             <>
+            <SideBar/>
             <div>
                 Hi Im Home
             </div>
             </>
         )
-    }
 }
 
 export default Admin_Dash
