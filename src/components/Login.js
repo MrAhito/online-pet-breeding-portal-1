@@ -20,7 +20,7 @@ function Login() {
             emailRef.current.value, passRef.current.value
         ).then(user => {
             console.log(user)
-            history.push('/dashboard');
+            history.push('/admin');
         }).catch(err => {
             if (err.code === 'auth/network-request-failed') {
                 setValid("Establishing Internet Connection Failed");

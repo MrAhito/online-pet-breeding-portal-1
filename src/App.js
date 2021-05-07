@@ -1,8 +1,10 @@
-import './App.css';
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import './App.css';
 import HomePage from './pages/HomePage';
 import Dashboard from './pages/Dashboard';
+import Adm_post from './components/Adm_post';
+import Admin_Dash from './components/Admin_Dash';
 function App() {
 
   return (
@@ -12,19 +14,19 @@ function App() {
           <Route path='/' exact component={HomePage} />
         </Switch> 
         <Switch>
-            <Route path='/dashboard' exact component={Dashboard} />
+            <Route path='/dashboard' exact component={Admin_Dash} />
         </Switch>
         <Switch>
-                <Route path='/post'  component={Dashboard} />
+                <Route path='/post' exact component={Adm_post} />
         </Switch>
         <Switch>
-                <Route path='/messages'  component={Dashboard} />
+                <Route path='/messages' exact component={Dashboard} />
         </Switch>
         <Switch>
-                <Route path='/team'  component={Dashboard} />
+                <Route path='/team' exact component={Dashboard} />
         </Switch>
         <Switch>
-                <Route path='/reports'  component={Dashboard} />
+                <Route path='/reports' exact component={Dashboard} />
         </Switch>
     </Router>
     </>
