@@ -110,8 +110,8 @@ function RegUserForm() {
                 ).then(user => {
                     console.log(user)
                     if (!user) return;
-                    const userRef = fireBaseDB.doc("users/" + user.uid);
-                    const pettRef = fireBaseDB.doc("pets/" + user.uid);
+                    const userRef = fireBaseDB.doc("users/" + auth.currentUser.uid);
+                    const pettRef = fireBaseDB.doc("pets/" + auth.currentUser.uid);
                     const snaps = userRef.get();
                 
                     if (!snaps.exist) {

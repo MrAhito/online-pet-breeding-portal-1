@@ -1,11 +1,11 @@
 .nav{
     background-color: var(--secondaryColor);
-    height: 8.5vh;
+    height: 7.3vh;
     border-bottom: .25vh solid #c8c7d1;
     display:  flex;
     flex-direction: row;
     text-align: center;
-    justify-content: center;
+    justify-content: space-between;
 
 }
 .nav-logo{

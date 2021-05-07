@@ -2,9 +2,12 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import './App.css';
 import HomePage from './pages/HomePage';
+import AdminDash from './components/Admin_Dash';
+import AdmPost from './components/Adm_post';
+import AdmMessage from './components/Adm_Message';
+import AdmTeam from './components/Adm_Team';
+import AdmReport from './components/Adm_Report';
 import Dashboard from './pages/Dashboard';
-import Adm_post from './components/Adm_post';
-import Admin_Dash from './components/Admin_Dash';
 function App() {
 
   return (
@@ -14,19 +17,14 @@ function App() {
           <Route path='/' exact component={HomePage} />
         </Switch> 
         <Switch>
-            <Route path='/dashboard' exact component={Admin_Dash} />
+              <Route path='/admin' exact component={AdminDash} />
+                <Route path='/admin/post'  component={AdmPost} />
+                <Route path='/admin/messages'  component={AdmMessage} />
+                <Route path='/admin/team'  component={AdmTeam} />
+                <Route path='/admin/reports'  component={AdmReport} />
         </Switch>
         <Switch>
-                <Route path='/post' exact component={Adm_post} />
-        </Switch>
-        <Switch>
-                <Route path='/messages' exact component={Dashboard} />
-        </Switch>
-        <Switch>
-                <Route path='/team' exact component={Dashboard} />
-        </Switch>
-        <Switch>
-                <Route path='/reports' exact component={Dashboard} />
+          <Route path='/dashboard' exact component={Dashboard}/>
         </Switch>
     </Router>
     </>

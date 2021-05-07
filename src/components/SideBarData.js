@@ -6,31 +6,31 @@ import * as bsIcons from 'react-icons/bs'
 export const SideBarData = [
     {
         title: 'Home',
-        path: '/dashboard',
+        path: '/admin/dashboard',
         icon: <aiIcons.AiFillHome />,
         cName: 'nav-text'
     },
     {
         title: 'Post',
-        path: '/post',
+        path: '/admin/post',
         icon: <bsIcons.BsFilePost />,
         cName: 'nav-text'
     },
     {
         title: 'Messages',
-        path: '/messages',
+        path: '/admin/messages',
         icon: <aiIcons.AiFillMessage />,
         cName: 'nav-text'
     },
     {
         title: 'Team',
-        path: '/team',
+        path: '/admin/team',
         icon: <ioIcons.IoMdPeople />,
         cName: 'nav-text'
     },
     {
         title: 'Reports',
-        path: '/reports',
+        path: '/admin/reports',
         icon: <ioIcons.IoIosPaper />,
         cName: 'nav-text'
     }
