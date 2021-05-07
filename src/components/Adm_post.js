@@ -1,15 +1,11 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-class Adm_post extends Component {
-    render() {
-        return (
-            <>
-            <div>
-                Hi Im Post
-            </div>
-            </>
-        )
-    }
+function Adm_post() {
+    return (
+        <div>
+        hI IM post            
+        </div>
+    )
 }
 
 export default Adm_post

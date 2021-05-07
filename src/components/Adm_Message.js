@@ -1,15 +1,11 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-class Adm_Message extends Component {
-    render() {
-        return (
-            <>
-            <div>
-                Hi Im Message
-            </div>
-            </>
-        )
-    }
+function Adm_Message() {
+    return (
+        <div>
+            hi Im a Messaeg
+        </div>
+    )
 }
 
 export default Adm_Message

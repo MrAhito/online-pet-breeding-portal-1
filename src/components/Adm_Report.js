@@ -1,15 +1,11 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-class Adm_Report extends Component {
-    render() {
-        return (
-            <>
-            <div>
-                Hi Im Reports
-            </div>
-            </>
-        )
-    }
+function Adm_Report() {
+    return (
+        <div>
+            Hi im Reporrstt
+        </div>
+    )
 }
 
 export default Adm_Report
