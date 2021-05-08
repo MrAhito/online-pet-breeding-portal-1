@@ -26,11 +26,13 @@ class NavUser extends Component {
                 <div className='navlogo-con'>
                     <img className='nav-logo navuslo' src={icon} alt="icon" />
                     <div className='search_div'>
-                        <aiIcons.CgSearch className='search_icon' />
+                        <aiIcons.CgSearch className='search_icon' alt='Search_logo' title='Search'/>
                         <input placeholder='Search Here...' />
                     </div>
                 </div>
                 <div className='cs_div'>
+                <aiIcons.CgFeed className='userNavIcons'  alt='newsfeed' title='Home'/>
+                <aiIcons.CgTimelapse className='userNavIcons'  alt='find' title='Find Breeder   '/>
                 </div>
                 <div className='userIcons'>
                     <aiIcons.CgProfile className='userNavIcons' /><span className='userNavname'>Username</span>
