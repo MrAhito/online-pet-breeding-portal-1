@@ -7,19 +7,18 @@
     width: 25vw;
     display: flex;
     flex-direction: row;
-    border: 1px solid red;
 }
 .cs_div{
     width: 48vw;
 }
 .navuslo{
-    margin: auto 0;
+    margin: auto 0 auto 1vw;
 }
 .search_div{
     background-color: ghostwhite;
     border: .2vh solid var(--primaryColor);
-    width: 50%; 
-    margin: .9vh 0.5vw  ;
+    width: 70%; 
+    margin: 1vh 0.5vw  ;
     border-radius: 1.5vw;
     display: flex;
     flex-direction: row;
@@ -44,7 +43,7 @@
     align-items: center;
 }
 .userNavIcons{
-    font-size: 4vh;
+    font-size: 3.5vh;
 }
 .userNavIcons:hover{
     color: var(--primaryColor);
@@ -52,6 +51,6 @@
 }
 .userNavname{
     cursor: default;
-    font-size: 2.5vh;
-    margin-left: -4.5vw;
+    font-size: 2.2vh;
+    margin-left: -2.75vw;
 }
