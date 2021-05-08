@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import icon from '../images/icon.png'
 import * as aiIcons from 'react-icons/cg'
 import '../components/NavUser.css'
+import NotifDiv from './NotifDiv'
 // import fireBaseDB, { auth } from '../firebase/firebase';
 
 
@@ -38,6 +39,9 @@ class NavUser extends Component {
                     <aiIcons.CgProfile className='userNavIcons' /><span className='userNavname'>Username</span>
                     <aiIcons.CgMail className='userNavIcons' />
                     <aiIcons.CgNotifications className='userNavIcons' />
+                    <div  className='notif_div'>
+                    <NotifDiv titleName='Notification' />
+                    </div>
                     <aiIcons.CgMenu className='userNavIcons' />
                 </div>
             </div>

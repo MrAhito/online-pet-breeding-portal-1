@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-
+import './USerRightDiv.css'
  class USerRightDiv extends Component {
     render() {
         return (
-            <div>
-                Hello i am Right DIv
+            <div className='div_right'>
+               helll
             </div>
         )
     }
