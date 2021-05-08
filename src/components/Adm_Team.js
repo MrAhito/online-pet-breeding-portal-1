@@ -5,7 +5,6 @@ export class Adm_Team extends Component {
     render() {
         return (
             <>
-                <Nav />
                 <div>
                     hi Im a Messaeg
         </div>

@@ -6,8 +6,7 @@ export class Adm_post extends Component {
         return (
             <>
                 <div>
-                    <Nav />
-                hI IM post
+                    hI IM post
         </div>
             </>
         )

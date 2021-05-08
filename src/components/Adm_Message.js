@@ -4,7 +4,6 @@ export class Adm_Message extends Component {
     render() {
         return (
             <>
-                <Nav />
                 <div>
                     hi Im a Messaeg
         </div>

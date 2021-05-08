@@ -6,8 +6,7 @@ export class Adm_Report extends Component {
         return (
             <>
                 <div>
-                    <Nav />
-                Hi im Reporrstt
+                    Hi im Reporrstt
         </div>
             </>
         )

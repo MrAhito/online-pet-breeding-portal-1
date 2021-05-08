@@ -6,8 +6,7 @@ export class Admin_Dash extends Component {
         return (
             <>
                 <div>
-                    <Nav />
-                Hi Im Home
+                    Hi Im Home
             </div>
             </>
         )
