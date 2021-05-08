@@ -4,8 +4,8 @@ import Nav from './Navigation'
 function Adm_Team() {
     return (
         <>
-            <Nav />
             <div>
+                <Nav />
                 Hi Im Team
         </div>
         </>

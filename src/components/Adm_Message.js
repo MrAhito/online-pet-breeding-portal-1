@@ -4,8 +4,8 @@ import Nav from './Navigation'
 function Adm_Message() {
     return (
         <>
-            <Nav />
             <div>
+                <Nav />
                 hi Im a Messaeg
         </div>
         </>

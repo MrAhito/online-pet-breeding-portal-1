@@ -4,8 +4,8 @@ import Nav from './Navigation'
 function Adm_post() {
     return (
         <>
-            <Nav />
             <div>
+                <Nav />
                 hI IM post
         </div>
         </>

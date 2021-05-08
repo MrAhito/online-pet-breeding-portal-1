@@ -5,8 +5,8 @@ function Admin_Dash() {
 
     return (
         <>
-            <Nav />
             <div>
+                <Nav />
                 Hi Im Home
             </div>
         </>
