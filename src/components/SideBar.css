@@ -1,14 +1,8 @@
-.sidebar{
-   background-color: var(--secondaryColor);
-    height: 8.5vh;
-    border-bottom: .25vh solid #c8c7d1;
-   display:  flex;
-    flex-direction: row;
-}
+
 .side-menuBars{
     display: flex;
     color: var(--primaryColor);
-   margin: 2.2vh 2vw;
+   margin: 5vh .7vw;
     font-size: 4vh;
     background: none;
 }
@@ -22,14 +16,14 @@
 }
 .nav-menu-items{
     margin-top: .8vh;
-    padding: 1vh 0;
+    padding: 0vh 0;
     list-style: none;
     width: 100%;
 
 }
 .nav-menu{
    background-color: var(--secondaryColor);
-    width:   40vh ;
+    width:   35vh ;
     border-right: .25vh solid #c8c7d1;
     height: 100vh;
    display: flex;
@@ -48,7 +42,7 @@
     justify-content: flex-start;
     align-items: center;
     list-style: none;
-    padding: .8vh 0 .8vh 1.6vh;
+    padding: .8vh 1.6vh .8vh 1.6vh;
     height: 7vh;
 }
 .nav-text a{
@@ -60,7 +54,7 @@
     display: flex;
     outline: none;
     align-items: center;
-    padding: 0 2.6vh;
+    padding: 0 1vh;
     border-radius: .7vh;
 }
 .nav-text a:hover{
