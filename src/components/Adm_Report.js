@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import Nav from './Navigation'
 
 export class Adm_Report extends Component {
     render() {

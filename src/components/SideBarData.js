@@ -6,7 +6,7 @@ import * as bsIcons from 'react-icons/bs'
 export const SideBarData = [
     {
         title: 'Home',
-        path: '/admin/dashboard',
+        path: '/admin',
         icon: <aiIcons.AiFillHome />,
         cName: 'nav-text'
     },
