@@ -3,7 +3,6 @@ import LogoNav from '../images/logo.png'
 import * as aiIcons from 'react-icons/cg'
 import Dp from '../images/icon.png'
 import './AdminNav.css'
-import './SideBar.css'
 import { Link } from 'react-router-dom'
 import { SideBarData } from './SideBarData'
 function AdminNav() {
