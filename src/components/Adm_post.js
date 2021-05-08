@@ -1,15 +1,17 @@
-import React from 'react'
+import React, { Component } from 'react'
 import Nav from './Navigation'
 
-function Adm_post() {
-    return (
-        <>
-            <div>
-                <Nav />
+export class Adm_post extends Component {
+    render() {
+        return (
+            <>
+                <div>
+                    <Nav />
                 hI IM post
         </div>
-        </>
-    )
+            </>
+        )
+    }
 }
 
 export default Adm_post

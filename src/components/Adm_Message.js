@@ -1,15 +1,16 @@
-import React from 'react'
+import React, { Component } from 'react'
 import Nav from './Navigation'
-
-function Adm_Message() {
-    return (
-        <>
-            <div>
+export class Adm_Message extends Component {
+    render() {
+        return (
+            <>
                 <Nav />
-                hi Im a Messaeg
+                <div>
+                    hi Im a Messaeg
         </div>
-        </>
-    )
+            </>
+        )
+    }
 }
 
 export default Adm_Message

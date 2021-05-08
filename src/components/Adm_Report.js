@@ -1,15 +1,17 @@
-import React from 'react'
+import React, { Component } from 'react'
 import Nav from './Navigation'
 
-function Adm_Report() {
-    return (
-        <>
-            <div>
-                <Nav />
+export class Adm_Report extends Component {
+    render() {
+        return (
+            <>
+                <div>
+                    <Nav />
                 Hi im Reporrstt
         </div>
-        </>
-    )
+            </>
+        )
+    }
 }
 
 export default Adm_Report
