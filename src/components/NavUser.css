@@ -1,10 +1,14 @@
+.userNavCon{
+    position: sticky;
+    top: 0%;
+}
 .navlogo-con, .cs_div, .userIcons{
     width: 33.33%;
+    display: flex;
+    flex-direction: row;
 }
 .navlogo-con{
-    display: flex;
-    padding-left: 2vw;
-    flex-direction: row;
+    padding-left: 1.5vw;
 }
 .navuslo{
     margin: auto 0;
@@ -25,10 +29,25 @@
     color: var(--primaryColor);
 }
 .search_div input{
-    font-size: 1.5vw;
+    font-size: 1.1vw;
     border: none;
     outline: none;
     width: 89%;
     margin: auto 0;
     background-color: transparent;
+}
+.userIcons{
+    justify-content: space-around;
+    align-items: center;
+}
+.userNavIcons{
+    font-size: 4.5vh;
+}
+.userNavIcons:hover{
+    color: var(--primaryColor);
+    transition: 0.2s ease-in-out;
+}
+.userNavname{
+    font-size: 2.5vh;
+    margin-left: -4.5vw;
 }

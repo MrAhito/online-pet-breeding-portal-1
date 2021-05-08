@@ -22,7 +22,7 @@ class NavUser extends Component {
 
     render() {
         return (
-            <div className="nav">
+            <div className="nav userNavCon">
                 <div className='navlogo-con'>
                     <img className='nav-logo navuslo' src={icon} alt="icon" />
                     <div className='search_div'>
@@ -33,8 +33,10 @@ class NavUser extends Component {
                 <div className='cs_div'>
                 </div>
                 <div className='userIcons'>
-                    <aiIcons.CgProfile />
-                    <p className="userName">{this.state.userName}</p>
+                    <aiIcons.CgProfile className='userNavIcons' /><span className='userNavname'>Username</span>
+                    <aiIcons.CgMail className='userNavIcons' />
+                    <aiIcons.CgNotifications className='userNavIcons' />
+                    <aiIcons.CgMenu className='userNavIcons' />
                 </div>
             </div>
         )

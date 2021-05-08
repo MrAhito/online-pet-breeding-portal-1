@@ -1,0 +1,19 @@
+.userDashBoard_div{
+    display: flex;
+    flex-direction: row;
+}
+.left_div{
+flex: 1;
+    height: 100vh;
+    border: 1px solid red;
+}
+.middle_div{
+    height: 100vh;
+    flex: 2;
+border: 1px solid red;
+}
+.right_div{
+border: 1px solid red;
+    height: 100vh;
+    flex: 1;
+}
