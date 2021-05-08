@@ -1,12 +1,10 @@
 import React from 'react'
-import SideBar from './SideBar'
 
 function Adm_post() {
     return (
         <>
-        <SideBar/>
-        <div>
-        hI IM post            
+            <div>
+                hI IM post
         </div>
         </>
     )
