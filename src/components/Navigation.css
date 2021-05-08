@@ -1,7 +1,7 @@
 .nav{
     background-color: var(--secondaryColor);
     height: 7.3vh;
-    border-bottom: .25vh solid #c8c7d1;
+    border-bottom: .25vh solid var(--borderColor);
     display:  flex;
     flex-direction: row;
     text-align: center;

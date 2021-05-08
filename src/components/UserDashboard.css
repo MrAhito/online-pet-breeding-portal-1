@@ -7,16 +7,16 @@ flex: 1;
     height: 90vh;
     position: fixed;
     width: 25vw;
-    border: 1px solid red;
+    border: 1px solid var(--borderColor);
 }
 .middle_div{
     height: 2000px;
     width: 48vw;
     margin: auto;
-border: 1px solid red;
+    border: 1px solid var(--borderColor);
 }
 .right_div{
-border: 1px solid red;
+    border: 1px solid var(--borderColor);
     position: fixed;
     right: 0;
     width: 25vw;
