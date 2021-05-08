@@ -4,16 +4,22 @@
 }
 .left_div{
 flex: 1;
-    height: 100vh;
+    height: 90vh;
+    position: fixed;
+    width: 25vw;
     border: 1px solid red;
 }
 .middle_div{
     height: 100vh;
-    flex: 2;
+    width: 48vw;
+    margin: auto;
 border: 1px solid red;
 }
 .right_div{
 border: 1px solid red;
-    height: 100vh;
+    position: fixed;
+    right: 0;
+    width: 25vw;
+    height: 90vh;
     flex: 1;
 }
