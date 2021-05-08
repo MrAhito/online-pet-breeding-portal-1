@@ -4,12 +4,13 @@ import NavUser from '../components/NavUser'
 class Dashboard extends Component {
     render() {
         return (
-    <>
-    <NavUser/>
-    <UserDashboard/>
-    </>
+            <>
+                <NavUser />
+                <UserDashboard />
+            </>
         )
     }
 }
 
 export default Dashboard
+
