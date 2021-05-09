@@ -12,7 +12,6 @@ flex: 1;
 }
 .middle_div{
     height: 2000px;
-    z-index: -1;
     width: 48vw;
     margin: auto;
 }

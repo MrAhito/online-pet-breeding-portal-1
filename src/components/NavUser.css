@@ -45,6 +45,9 @@
 .userNavIcons{
     font-size: 3.5vh;
 }
+.userNavname{
+    font-size: 1.05vw;
+}
 .userNavIcons:hover{
     transition: 0.2s ease-in-out;
 }
