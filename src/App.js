@@ -4,7 +4,6 @@ import './App.css';
 import HomePage from './pages/HomePage';
 import Dashboard from './pages/Dashboard';
 import Admin from './pages/Admin';
-import homeTrain from './trial/homeTrain';
 
 function App() {
 
@@ -19,9 +18,6 @@ function App() {
         </Switch>
         <Switch>
         <Route path='/admin' exact component={Admin} />
-      </Switch>
-      <Switch>
-        <Route path='/training-page' exact component={homeTrain} />
       </Switch>
       </Router>
     </>
