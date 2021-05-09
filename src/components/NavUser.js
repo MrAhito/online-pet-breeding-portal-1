@@ -8,18 +8,23 @@ import NotifDiv from './NotifDiv'
 
 class NavUser extends Component {
 
-    constructor(props) {
-        super(props)
-        // const uid = auth.currentUser.uid.toString() ;
-        // const usernameRef = fireBaseDB.doc("users/"+uid)
-        // const snaps = usernameRef.get();
-
-
+    constructor() {
+        super()
         this.state = {
-
+            titleName: '',
+            visibke: false,
+            visibleM: false
         }
     }
 
+    changeVieae(ComName, visiMe, visiNO) {
+        this.setState({
+            titleName: ComName,
+            visibke: visiMe,
+            visibleM: visiNO
+
+        })
+    }
 
     render() {
         return (
@@ -49,14 +54,17 @@ class NavUser extends Component {
                     <aiIcons.CgProfile className='userNavIcons' />
                     <span className='userNavname'>Username</span>
                 </div>
-                <div className='CgICons'>
-                    <aiIcons.CgMail className='userNavIcons' />
+                <div className='CgICons' onClick={(e) => this.changeVieae('Messages', false, !this.state.visibleM)}>
+                    <aiIcons.CgMail className='userNavIcons'  />
                 </div>
-                <div  className='CgICons'>
+                <div  className={this.state.visibleM ? 'notif_div shiw' : 'notif_div' }>
+                <NotifDiv titleName={this.state.titleName} />
+                </div>
+                <div  className='CgICons' onClick={(e) => this.changeVieae('Notifications', !this.state.visibke,false)} >
                     <aiIcons.CgNotifications className='userNavIcons' />
                 </div>
-                <div  className='notif_div'>
-                <NotifDiv titleName='Notification' />
+                <div  className={this.state.visibke  ? 'notif_div shiw' : 'notif_div' }>
+                <NotifDiv titleName={this.state.titleName} />
                 </div>
                 <div className='CgICons'>
                     <aiIcons.CgMenu className='userNavIcons' />

@@ -80,5 +80,11 @@
     margin-top: 99vh;
     user-select: none;
     width: 25vw;
-    height: 90vh;
+    display: none;
+ transition: 1s ease-in-out;
+ height: 90vh;
+}
+.notif_div.shiw{
+ display: block;
+ transition: 1s ease-in-out;
 }
