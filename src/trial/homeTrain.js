@@ -1,12 +1,15 @@
 import React, { Component } from 'react'
-import Trial1 from './Trial1'
+import './homeTrain.css'
+import TrialPage from './TrialPage'
 
  class homeTrain extends Component {
     render() {
         return (
             <>
+            <div className='train_div'>
             <h1> Hello I am the Train page Header</h1>
-            <Trial1/>
+            <TrialPage/>
+            </div>
             </>
         )
     }

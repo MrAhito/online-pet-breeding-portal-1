@@ -16,27 +16,9 @@ var firebaseConfig = {
 const firebaseApp = firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 const auth = firebase.auth();
+const storage = firebase.storage();
 
 export { auth };
+export { storage };
 export { firebaseApp };
 export default db;
-export const createUserInfo = async (user, username, contactnum, birthdate) => {
-    if (!user) return;
-    const userRef = db.doc("users/" + user.uid);
-    const snaps = await userRef.get();
-
-    if (!snaps.exist) {
-        const { email } = user;
-        const { uname } = username;
-        const { contact } = contactnum;
-        const { bdate } = birthdate;
-
-        try {
-            userRef.set({
-                uname, email, contact, bdate, createdAt: new Date(),
-            })
-        } catch (error) {
-            console.log("Error in creating user info", error);
-        }
-    }
-}
