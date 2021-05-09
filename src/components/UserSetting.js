@@ -1,6 +1,8 @@
 import React from 'react'
 import './UserSetting.css'
+
 function UserSetting(props) {
+
     return (
         <>
         <div className='setinds'>

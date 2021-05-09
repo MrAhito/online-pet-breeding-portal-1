@@ -43,16 +43,16 @@ function Login() {
     }
     return (
         <>
-            <div className="log-container">
-                <div className="log-title"><h1>Pet Breeding Portal</h1><p>Your pet Breeding Companion</p></div>
+            <div id='home' className="log-container">
+                <div className="log-title"><h1>Pet Breeding Portal</h1><p>Your pet Breeding Companion</p><a href='/training-page'>{"<=== TO Training Page"}</a></div>
                 <div className="f-container">
                     <form className="form-container">
                         <input type="text" name="email" ref={emailRef} id="txt-email" placeholder="Email Address" className="txt txemail" required />
                         <input type="password" name="pword" ref={passRef} id="txt-pass" placeholder="Password" className="txt txpass" required />
-                        <p><span className='validate'>{validate}</span></p>
-                        <button className="btn btn-submit" id="btn-sub" onClick={login}>Log In</button>
-                        <p>Forgot Password?</p>
-                        <hr />
+                        <a href='#home' className='fic'><span className='validate'>{validate}</span></a>
+                        <button className="btn btn-submit " id="btn-sub" onClick={login}>Log In</button>
+                        <a href='#home' className='fica'>Forgot Password?</a>
+                        <div className='bordertop' />
                         <Link to='' onClick={sh}>
                             <button className="btn btn-reg">Create New Account</button>
                         </Link>

@@ -3,10 +3,8 @@ import icon from '../images/icon.png'
 import * as aiIcons from 'react-icons/cg'
 import '../components/NavUser.css'
 import NotifDiv from './NotifDiv'
-import fireBaseDB, { auth } from '../firebase/firebase';
-import db from '../firebase/firebase'
 import UserSetting from './UserSetting'
-
+// import firebaseDb, { auth } from '../firebase/firebase'
 
 class NavUser extends Component {
 
@@ -20,11 +18,10 @@ class NavUser extends Component {
             visibleS: false
         }
     }
+ 
     componentDidMount(){
-        console.log('mounteda')
-        // const username = fireBaseDB.collection('users/').get()
         this.setState({
-            userName: auth.currentUser
+            userName: 'UserName',
         })
     }
 

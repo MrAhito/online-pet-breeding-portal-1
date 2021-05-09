@@ -1,6 +1,8 @@
 .footer-container{
-    height: 12vh;
+    height: 10vh;
+    width: 100%;
     display: flex;
+    position: fixed;
     flex-direction: column;
     justify-content: center;
     border-top: .3vh solid #c8c7d1;

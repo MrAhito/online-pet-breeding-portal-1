@@ -5,6 +5,15 @@
     margin: auto;
     height: 77vh;
 }
+.fic{
+    text-decoration: none;
+    cursor:pointer;
+    user-select: none;
+}
+.bordertop{
+    margin-top: 2vh;
+    border-top: .3vh solid var(--borderColor);
+}
 .log-title, .f-container{
     display: flex;
     width: 50%;
@@ -99,9 +108,9 @@ font-size: 1.5vw;
     display: none;
     margin: auto;
     position: fixed;    
-    top: 8.9vh;
+    top: 6.9vh;
     background-color:rgba(243, 243, 243, .9);
-    height: 80vh;
+    height: 83vh;
 }
 .reg-container.show{
     display: block;
