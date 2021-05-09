@@ -1,0 +1,6 @@
+.New_post{
+    background-color: var(--secondaryColor);
+    width: 100%;
+    border-radius: .4vw;
+    height: 20vh;
+}

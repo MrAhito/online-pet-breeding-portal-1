@@ -16,7 +16,7 @@
 }
 .search_div{
     background-color: ghostwhite;
-    border: .2vh solid var(--primaryColor);
+    border: .2vh solid var(--borderColor);
     width: 70%; 
     margin: 1vh 0.5vw  ;
     border-radius: 1.5vw;
@@ -46,18 +46,39 @@
     font-size: 3.5vh;
 }
 .userNavIcons:hover{
-    color: var(--primaryColor);
     transition: 0.2s ease-in-out;
 }
-.userNavname{
-    cursor: default;
-    font-size: 2.2vh;
-    margin-left: -2.75vw;
+.CgICons{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    padding: .65vw;
+    border-radius: 2.5vw;
+    align-items: center;
+    transition: .2s ease-in-out;
+    cursor: pointer;
+}
+.CProfile{
+    padding: .5vw 1vw;
+}
+.mainDiv{
+    width: 450%;
+    border-radius: .3vw;
+    align-items: center;
+    justify-content: center;
+}
+.CgICons:hover{
+    background-color: var(--borderColor);
+    transition: .3s ease-in-out;
 }
 
+.CgICons span{
+    user-select: none;
+}
 .notif_div{
     position: absolute;
     margin-top: 99vh;
+    user-select: none;
     width: 25vw;
     height: 90vh;
 }

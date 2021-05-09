@@ -1,11 +1,15 @@
 import React, { Component } from 'react'
-
+import './USerPostDiv.css'
  class USerPostDiv extends Component {
     render() {
         return (
-            <div>
-                Hi am  i post div
-            </div>
+            <>
+              <div className='New_post'>
+              <div className='user_post'>
+              
+              </div>
+              </div>
+            </>
         )
     }
 }

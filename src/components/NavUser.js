@@ -24,6 +24,7 @@ class NavUser extends Component {
     render() {
         return (
             <div className="nav userNavCon">
+
                 <div className='navlogo-con'>
                     <img className='nav-logo navuslo' src={icon} alt="icon" />
                     <div className='search_div'>
@@ -31,19 +32,37 @@ class NavUser extends Component {
                         <input placeholder='Search Here...' />
                     </div>
                 </div>
+
+
                 <div className='cs_div'>
+                <div className='CgICons mainDiv'>
                 <aiIcons.CgFeed className='userNavIcons'  alt='newsfeed' title='Home'/>
+                </div>
+                <div className='CgICons mainDiv'>
                 <aiIcons.CgTimelapse className='userNavIcons'  alt='find' title='Find Breeder   '/>
                 </div>
+                </div>
+
+
                 <div className='userIcons'>
-                    <aiIcons.CgProfile className='userNavIcons' /><span className='userNavname'>Username</span>
+                <div className='CgICons CProfile'>
+                    <aiIcons.CgProfile className='userNavIcons' />
+                    <span className='userNavname'>Username</span>
+                </div>
+                <div className='CgICons'>
                     <aiIcons.CgMail className='userNavIcons' />
+                </div>
+                <div  className='CgICons'>
                     <aiIcons.CgNotifications className='userNavIcons' />
-                    <div  className='notif_div'>
-                    <NotifDiv titleName='Notification' />
-                    </div>
+                </div>
+                <div  className='notif_div'>
+                <NotifDiv titleName='Notification' />
+                </div>
+                <div className='CgICons'>
                     <aiIcons.CgMenu className='userNavIcons' />
                 </div>
+                </div>
+
             </div>
         )
     }
