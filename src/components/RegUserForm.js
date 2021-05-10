@@ -19,6 +19,7 @@ function RegUserForm() {
     const petGenderRef = useRef();
     const petSpeciRef = useRef();
     const petBreedRef = useRef();
+    const hiddenFileInput = useRef(null);
 
     const [dpImg, setdpImg] = useState('https://www.shareicon.net/data/256x256/2017/02/15/878685_user_512x512.png');
 
@@ -208,6 +209,20 @@ function RegUserForm() {
             console.log(Gender);
         }
     }
+
+    const imageClick = event => {
+        hiddenFileInput.current.click();
+    };
+
+    const onChangeImg = event => {
+            const reader = new FileReader();
+            reader.onload = () => {
+                if(reader.readyState === 2){
+                    setdpImg(reader.result);
+                }
+            }
+        reader.readAsDataURL(event.target.files[0])
+    }
     return (
         <>
             <div className={showPet ? 'reg-form-c show' : 'reg-form-c'} >
@@ -215,7 +230,8 @@ function RegUserForm() {
                     <div className="pet-reg fixs">
                         <div className="pet-title"><h1>User Information </h1></div>
                         <div className='avatarHolder'>
-                        <img src={dpImg} alt='Profile' />
+                        <input style={{display: 'none'}} type='file' onChange = {onChangeImg} ref={hiddenFileInput}/>
+                        <img src={dpImg} alt='Profile' onClick={imageClick} />
                         </div>
 
                         <input className='reg_in' type="text" name="txt-Fnme" placeholder='First Name:' ref={fnameRef} id="txtFname" />
@@ -260,14 +276,14 @@ function RegUserForm() {
                 <div>
                     <div className="pet-reg">
                         <div className="pet-title"><h1>Pet Information </h1></div>
-                        <input type="text" name="txt-Anme" placeholder='Name:'  ref={petNameRef} id="txtAnme" />
+                        <input className='reg_in' type="text" name="txt-Anme" placeholder='Name:'  ref={petNameRef} id="txtAnme" />
                         <div  className={errPName ? 'valida sh' : 'valida'}>
                             <faIcons.FaExclamationCircle></faIcons.FaExclamationCircle></div>
-                            <input type="date" name="txt-PDate" placeholder='Birth Date:' ref={petDateRef} id="txtBdate" />
+                            <input className='reg_in'  type="date" name="txt-PDate" placeholder='Birth Date:' ref={petDateRef} id="txtBdate" />
                             <div className={errPDate ? 'valida sh' : 'valida'}>
                                 <faIcons.FaExclamationCircle></faIcons.FaExclamationCircle></div>
-                        <select name="txt-Spec" id="txtSpec" ref={petSpeciRef}  defaultValue={'DEFAULT'} >
-                            <option value="DEFAULT"  disabled>Species:</option>
+                        <select className='reg_in' name="txt-Spec" id="txtSpec" ref={petSpeciRef}  defaultValue={''} >
+                            <option value=""  disabled>Species:</option>
                             <option value="Dog">Dog</option>
                             <option value="Cat">Cat</option>
                             <option value="Rabbit">Rabbit</option>
@@ -275,16 +291,16 @@ function RegUserForm() {
                         <div className={errPSpec ? 'valida sh' : 'valida'}>
                             <faIcons.FaExclamationCircle></faIcons.FaExclamationCircle>
                         </div>
-                    <select name="txt-Bred" id="txtBred" ref={petBreedRef} defaultValue={'DEFAULT'} >
-                        <option value="DEFAULT"  disabled>Breed:</option>
+                    <select className='reg_in' name="txt-Bred" id="txtBred" ref={petBreedRef} defaultValue={''} >
+                        <option value=""  disabled>Breed:</option>
                         <option value="breed1">Breed 1</option>
                         <option value="breed2">Breed 2</option>
                     </select>
                     <div className={errPBred ? 'valida sh' : 'valida'}>
                         <faIcons.FaExclamationCircle></faIcons.FaExclamationCircle>
                     </div>
-                            <select name="txt-Gend" id="txtPGend" ref={petGenderRef}  defaultValue={'DEFAULT'}>
-                            <option value="DEFAULT"  disabled>Gender:</option>
+                            <select className='reg_in'  name="txt-Gend" id="txtPGend" ref={petGenderRef}  defaultValue={''}>
+                            <option className='placeH' value=""  disabled>Gender:</option>
                             <option value="male">Male</option>
                             <option value="female">Female</option>
                         </select>
@@ -294,7 +310,7 @@ function RegUserForm() {
                         <div></div>
                     </div>
                 </div>
-                <div className="reg-footer">
+                <div className="reg-footer petf">
                     <div>
                         <button className='btn btn-sub' onClick={petSHow} >Back</button>
                         <button className='btn btn-sub' onClick={signUp} >Sign Up</button>

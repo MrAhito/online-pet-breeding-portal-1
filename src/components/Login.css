@@ -237,6 +237,8 @@ grid-column: 1/5;
 }
 .avatarHolder > img {
 border-radius: 50%;
+height: 15vh;
+width: 15vh;
 }
 
 #txtEmails, #txtPword, #txtAddr{
@@ -266,4 +268,15 @@ border-radius: 50%;
 }
 .pet-reg > select{
     height: 5.4vh;
+}
+
+.petf{
+    height: 7vw;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.termscon{
+    font-size: 1vw;
+    cursor: pointer;
 }
