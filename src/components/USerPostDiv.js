@@ -33,7 +33,6 @@ import PostedData from './Posted_Data'
 
             <div className={this.state.addPostDiv ? 'posting_div shaw' : 'posting_div'} >
               <div className='AddPostCon'>
-                awdawdawd
               </div>
               <div className='blocker' onClick={(e) => this.viewPosting(false)} />
             </div>

@@ -14,6 +14,9 @@ function App() {
           <Route path='/' exact component={HomePage} />
         </Switch>
         <Switch>
+          <Route path='/dashboard' exact component={Dashboard} />
+        </Switch>
+        <Switch>
         <Route path='/admin' exact component={Admin} />
       </Switch>
       </Router>

@@ -11,7 +11,7 @@ function UserDashboard() {
                 <USerLeftDiv/>
                 </div>
                 <div id='home' className='middle_div'>
-                    {/* <USerPostDiv/> */}
+                    <USerPostDiv />
                 </div>
                 <div className='right_div'>
                 <USerRightDiv/>

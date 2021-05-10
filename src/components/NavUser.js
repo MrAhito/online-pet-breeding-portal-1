@@ -53,7 +53,7 @@ class NavUser extends Component {
                     <a href="#home" className='CgICons mainDiv' title='Home'>
                         <aiIcons.CgFeed className='userNavIcons' alt='newsfeed' />
                     </a>
-                    <a href="#home" className='CgICons mainDiv' title='Find Breeder'>
+                    <a href="#homes" className='CgICons mainDiv' title='Find Breeder'>
                         <aiIcons.CgTimelapse className='userNavIcons' alt='find' />
                     </a>
                 </div>
