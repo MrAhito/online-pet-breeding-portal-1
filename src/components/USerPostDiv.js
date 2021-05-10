@@ -25,11 +25,6 @@ class USerPostDiv extends Component {
               <img src={Ivon} alt='icon' className='iconUserPost'/>
               <input type='text' name='textPost' className='inputUserPost' placeholder='Create a Post  here....'></input>
               </div>
-
-              <div className='btton_post'>
-                <div className='ImageAdd' title='Add Image'><fiIlCons.FiImage className='iconimg' /><span>Add Image</span></div>
-                <div className='TagAdd' title='Add Tag'><fiIlCons.FiTag className='icontag' /><span>Add Tag</span></div>
-              </div>
               </div>
 
 
