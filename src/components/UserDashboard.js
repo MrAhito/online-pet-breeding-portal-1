@@ -10,8 +10,8 @@ function UserDashboard() {
                 <div className='left_div'>
                 <USerLeftDiv/>
                 </div>
-                <div id='home' className='middle_div'>
-                    <USerPostDiv />
+                <div className='middle_div'>
+                <USerPostDiv/>
                 </div>
                 <div className='right_div'>
                 <USerRightDiv/>

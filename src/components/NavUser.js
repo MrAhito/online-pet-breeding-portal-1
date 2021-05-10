@@ -50,37 +50,37 @@ class NavUser extends Component {
 
 
                 <div className='cs_div'>
-                    <a href="#home" className='CgICons mainDiv' title='Home'>
-                        <aiIcons.CgFeed className='userNavIcons' alt='newsfeed' />
-                    </a>
-                    <a href="#homes" className='CgICons mainDiv' title='Find Breeder'>
-                        <aiIcons.CgTimelapse className='userNavIcons' alt='find' />
-                    </a>
+                <div className='CgICons mainDiv'>
+                <aiIcons.CgFeed className='userNavIcons'  alt='newsfeed' title='Home'/>
+                </div>
+                <div className='CgICons mainDiv'>
+                <aiIcons.CgTimelapse className='userNavIcons'  alt='find' title='Find Breeder   '/>
+                </div>
                 </div>
 
 
                 <div className='userIcons'>
-                    <div className='CgICons CProfile' title='Profile'>
+                <div className='CgICons CProfile'>
                     <aiIcons.CgProfile className='userNavIcons' />
                     <span className='userNavname'>{this.state.userName}</span>
                 </div>
-                    <div className='CgICons' title='Messages' onClick={(e) => this.changeVieae('Messages', false, !this.state.visibleM, false)}>
+                <div className='CgICons' onClick={(e) => this.changeVieae('Messages', false, !this.state.visibleM, false)}>
                     <aiIcons.CgMail className='userNavIcons'  />
                 </div>
                 <div  className={this.state.visibleM ? 'notif_div shiw' : 'notif_div' }>
                 <NotifDiv titleName={this.state.titleName} />
                 </div>
-                    <div className='CgICons' title='Notifications' onClick={(e) => this.changeVieae('Notifications', !this.state.visibke, false, false)} >
+                <div  className='CgICons' onClick={(e) => this.changeVieae('Notifications', !this.state.visibke,false, false)} >
                     <aiIcons.CgNotifications className='userNavIcons' />
                 </div>
                 <div  className={this.state.visibke  ? 'notif_div shiw' : 'notif_div' }>
                 <NotifDiv titleName={this.state.titleName} />
                 </div>
-                    <div className='CgICons' title='Setting' onClick={(e) => this.changeVieae('Settings', false, false, !this.state.visibleS)} >
+                <div className='CgICons' onClick={(e) => this.changeVieae('Settings',false, false, !this.state.visibleS)} >
                     <aiIcons.CgMenu className='userNavIcons' />
                 </div>
-                    <div className={this.state.visibleS ? 'notif_div shiw' : 'notif_div'}>
-                        <UserSetting titleName={this.state.titleName} />
+                <div  className={this.state.visibleS  ? 'notif_div shiw' : 'notif_div' }>
+                <UserSetting titleName={this.state.titleName} />
                 </div>
 
                 </div>
