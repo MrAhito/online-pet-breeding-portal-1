@@ -133,16 +133,20 @@ function RegUserForm() {
                 auth.createUserWithEmailAndPassword(
                    Email, PassWord
                 ).then(user => {
-                    console.log(user)
                     if (!user) return;
                     const userRef = fireBaseDB.doc("users/" + auth.currentUser.uid);
                     const pettRef = fireBaseDB.doc("pets/" + auth.currentUser.uid);
                     const snaps = userRef.get();
                 
                     if (!snaps.exist) {
+                        const {email} = user;
+                        const {displayName} = FirstName;
+                        const {displayLastName} = LastName;
+                        
                         try {
                             userRef.set({
-                                FirstName, LastName, Contact, Address, Email, BirthDate, PassWord, Gender, createdAt: new Date(),
+
+                            
                             });
                             pettRef.set({
                                 createdAt: new Date(), PetName, PetBDate, PetSpec, PetBreed, PetGend, PetsWeight, PetsHeight, 
