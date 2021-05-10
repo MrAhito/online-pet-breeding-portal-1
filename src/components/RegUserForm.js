@@ -19,9 +19,13 @@ function RegUserForm() {
     const petGenderRef = useRef();
     const petSpeciRef = useRef();
     const petBreedRef = useRef();
+    const petWeightRef = useRef();
+    const petHeightRef = useRef();
     const hiddenFileInput = useRef(null);
-
+    const hiddenFileInput2 = useRef(null);
+    
     const [dpImg, setdpImg] = useState('https://www.shareicon.net/data/256x256/2017/02/15/878685_user_512x512.png');
+    const [petImg, setpetImg] = useState('https://res.cloudinary.com/pet-breeding/image/upload/v1620600697/b5arwppmaihcbukxdzin.png');
 
     const [cgend, setcgend] = useState(false);
     const [errFName, setFName] = useState(false);
@@ -38,6 +42,8 @@ function RegUserForm() {
     const [errPBred, setPBred] = useState(false);
     const [errPGend, setPGend] = useState(false);
     const [errCGen, setCGen] = useState(false);
+    const [errPWeight, setPWeight] = useState(false);
+    const [errPHeight, setPHeight] = useState(false);
     const [showPet, setshowPet] = useState(true);
     const petSHow = () => setshowPet(!showPet);
 
@@ -64,6 +70,8 @@ function RegUserForm() {
     const [PetSpec, setPetSpec] = useState("");
     const [PetBreed, setPetBreed] = useState("");
     const [PetGend, setPetGend] = useState("");
+    const [PetsWeight, setPetsWeight] = useState("");
+    const [PetsHeight, setPetsHeight] = useState("");
 
     const signUp = (e) =>{
         const petName = petNameRef.current.value;
@@ -71,6 +79,8 @@ function RegUserForm() {
         const petSpeci = petSpeciRef.current.value;
         const petBreed = petBreedRef.current.value;
         const petGender = petGenderRef.current.value;
+        const petWeight = petWeightRef.current.value;
+        const petHeight = petHeightRef.current.value;
     
         if (petName.replace(/\s/g, "").length <= 0) {
             setPName(true);
@@ -102,11 +112,23 @@ function RegUserForm() {
             setPetGend(petGender);
             setPGend(false);
         }
+        if (petWeight.replace(/\s/g, "").length <= 0) {
+            setPWeight(true);
+        } else {
+            setPetsWeight(petWeight);
+            setPWeight(false);
+        }
+        if (petHeight.replace(/\s/g, "").length <= 0) {
+            setPHeight(true);
+        } else {
+            setPetsHeight(petHeight);
+            setPHeight(false);
+        }
 
-        if(!PetName.replace(/\s/g, "").length <= 0 && !PetBDate.replace(/\s/g, "").length <= 0 && !PetSpec.replace(/\s/g, "").length <= 0
-        && !PetBreed.replace(/\s/g, "").length <= 0 && !PetGend.replace(/\s/g, "").length <= 0){
-            console.log("User Inputs!\nName: "+PetName+" ")
-
+        if(!petNameRef.current.value.replace(/\s/g, "").length <= 0 && !petDateRef.current.value.replace(/\s/g, "").length <= 0 
+        && !petSpeciRef.current.value.replace(/\s/g, "").length <= 0 && !petBreedRef.current.value.replace(/\s/g, "").length <= 0
+        && !petGenderRef.current.value.replace(/\s/g, "").length <= 0 && !petHeightRef.current.value.replace(/\s/g, "").length <= 0
+        && !petWeightRef.current.value.replace(/\s/g, "").length <= 0){
                 e.preventDefault();
                 auth.createUserWithEmailAndPassword(
                    Email, PassWord
@@ -123,7 +145,7 @@ function RegUserForm() {
                                 FirstName, LastName, Contact, Address, Email, BirthDate, PassWord, Gender, createdAt: new Date(),
                             });
                             pettRef.set({
-                                createdAt: new Date(), PetName, PetBDate, PetSpec, PetBreed, PetGend,
+                                createdAt: new Date(), PetName, PetBDate, PetSpec, PetBreed, PetGend, PetsWeight, PetsHeight, 
 
                             });
                     history.push('/dashboard');
@@ -202,27 +224,34 @@ function RegUserForm() {
                 setGender(genDer);
             setGen(false);
         }
-        if(!FirstName.replace(/\s/g, "").length <= 0 && !LastName.replace(/\s/g, "").length <= 0 && !Address.replace(/\s/g, "").length <= 0 
-        && !BirthDate.replace(/\s/g, "").length <= 0 && !PassWord.replace(/\s/g, "").length <= 0 && !Contact.replace(/\s/g, "").length <= 0 
-        && !Email.replace(/\s/g, "").length <= 0 && !Gender.replace(/\s/g, "").length <= 0 ){
+        if(!fnameRef.current.value.replace(/\s/g, "").length <= 0 && !lnameRef.current.value.replace(/\s/g, "").length <= 0 
+        && !regAdRef.current.value.replace(/\s/g, "").length <= 0 && !bdateRef.current.value.replace(/\s/g, "").length <= 0 
+        && !regPaRef.current.value.replace(/\s/g, "").length <= 0 && !conRef.current.value.replace(/\s/g, "").length <= 0 
+        && !regEmRef.current.value.replace(/\s/g, "").length <= 0 && !genRef.current.value.replace(/\s/g, "").length <= 0 ){
             setshowPet(!showPet);
             console.log(Gender);
         }
     }
 
-    const imageClick = event => {
-        hiddenFileInput.current.click();
-    };
-
-    const onChangeImg = event => {
-            const reader = new FileReader();
-            reader.onload = () => {
-                if(reader.readyState === 2){
-                    setdpImg(reader.result);
-                }
+    const onUserImg = event => {
+        const reader = new FileReader();
+        reader.onload = () => {
+            if(reader.readyState === 2){
+                setdpImg(reader.result);
             }
-        reader.readAsDataURL(event.target.files[0])
-    }
+        }
+    reader.readAsDataURL(event.target.files[0])
+}
+
+const onPetImg = event => {
+        const reader = new FileReader();
+        reader.onload = () => {
+            if(reader.readyState === 2){
+                setpetImg(reader.result);
+            }
+        }
+    reader.readAsDataURL(event.target.files[0])
+}
     return (
         <>
             <div className={showPet ? 'reg-form-c show' : 'reg-form-c'} >
@@ -230,8 +259,8 @@ function RegUserForm() {
                     <div className="pet-reg fixs">
                         <div className="pet-title"><h1>User Information </h1></div>
                         <div className='avatarHolder'>
-                        <input style={{display: 'none'}} type='file' onChange = {onChangeImg} ref={hiddenFileInput}/>
-                        <img src={dpImg} alt='Profile' onClick={imageClick} />
+                        <input style={{display: 'none'}} type='file' onChange = {onUserImg} ref={hiddenFileInput}/>
+                        <img src={dpImg} alt='Profile' onClick={(e) => {hiddenFileInput.current.click();}}  />
                         </div>
 
                         <input className='reg_in' type="text" name="txt-Fnme" placeholder='First Name:' ref={fnameRef} id="txtFname" />
@@ -273,9 +302,15 @@ function RegUserForm() {
                 </div>
             </div>
             <div className={showPet ? 'reg-form-c' : 'reg-form-c show'} >
-                <div>
+                <div className='flow-comn'>
                     <div className="pet-reg">
                         <div className="pet-title"><h1>Pet Information </h1></div>
+
+                        <div className='avatarHolder'>
+                        <input style={{display: 'none'}} type='file' onChange = {onPetImg} ref={hiddenFileInput2}/>
+                        <img src={petImg} alt='Profile' onClick={(e) => {hiddenFileInput2.current.click();}} />
+                        </div>
+
                         <input className='reg_in' type="text" name="txt-Anme" placeholder='Name:'  ref={petNameRef} id="txtAnme" />
                         <div  className={errPName ? 'valida sh' : 'valida'}>
                             <faIcons.FaExclamationCircle></faIcons.FaExclamationCircle></div>
@@ -286,7 +321,6 @@ function RegUserForm() {
                             <option value=""  disabled>Species:</option>
                             <option value="Dog">Dog</option>
                             <option value="Cat">Cat</option>
-                            <option value="Rabbit">Rabbit</option>
                         </select>
                         <div className={errPSpec ? 'valida sh' : 'valida'}>
                             <faIcons.FaExclamationCircle></faIcons.FaExclamationCircle>
@@ -299,15 +333,21 @@ function RegUserForm() {
                     <div className={errPBred ? 'valida sh' : 'valida'}>
                         <faIcons.FaExclamationCircle></faIcons.FaExclamationCircle>
                     </div>
-                            <select className='reg_in'  name="txt-Gend" id="txtPGend" ref={petGenderRef}  defaultValue={''}>
+                        <select className='reg_in'  name="txt-Gend" id="txtPGend" ref={petGenderRef}  defaultValue={''}>
                             <option className='placeH' value=""  disabled>Gender:</option>
                             <option value="male">Male</option>
                             <option value="female">Female</option>
                         </select>
                         <div className={errPGend ? 'valida sh' : 'valida'}>
-                            <faIcons.FaExclamationCircle></faIcons.FaExclamationCircle>
-                        </div>
-                        <div></div>
+                            <faIcons.FaExclamationCircle></faIcons.FaExclamationCircle></div>
+                        <input className='reg_in' type="number" name="txt-Weig" placeholder='Weight:(kg)'  ref={petWeightRef} id="txtWeig" />
+                        <div  className={errPWeight ? 'valida sh' : 'valida'}>
+                            <faIcons.FaExclamationCircle></faIcons.FaExclamationCircle></div>
+                        <input className='reg_in' type="number" name="txt-Heig" placeholder='Height:(kg)'  ref={petHeightRef} id="txtHeig" />
+                        <div  className={errPHeight ? 'valida sh' : 'valida'}>
+                            <faIcons.FaExclamationCircle></faIcons.FaExclamationCircle></div>
+                        <div>
+                    </div>
                     </div>
                 </div>
                 <div className="reg-footer petf">
