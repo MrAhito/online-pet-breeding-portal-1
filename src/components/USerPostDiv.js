@@ -4,17 +4,6 @@ import './USerPostDiv.css'
 import PostedData from './Posted_Data'
 
 class USerPostDiv extends Component {
-   constructor() {
-     super()
-     this.state = {
-       addPostDi: false
-     }
-   }
-   viewPosting(valua) {
-     this.setState({
-       addPostDiv: valua
-     })
-   }
 
     render() {
         return (
