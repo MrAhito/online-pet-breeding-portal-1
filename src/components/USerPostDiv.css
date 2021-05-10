@@ -78,7 +78,6 @@ z-index: 1;
     bottom: 0;
     right: 0;
 background-color:rgba(236, 230, 230, 0.75);
-content: ' ';
 }
 .posting_div.shaw{
 display: flex;
