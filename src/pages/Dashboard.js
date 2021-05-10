@@ -5,8 +5,9 @@ class Dashboard extends Component {
     render() {
         return (
             <>
-                {/* <NavUser /> */}
-                <UserDashboard />
+                Hi
+                {/* <NavUser />
+                <UserDashboard /> */}
             </>
         )
     }
