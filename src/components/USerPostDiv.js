@@ -1,28 +1,20 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 import Ivon from '../images/icon.png'
 import * as aiIcons from 'react-icons/fi'
 import './USerPostDiv.css'
 import PostedData from './Posted_Data'
 
- class USerPostDiv extends Component {
-   constructor() {
-     super()
-     this.state = {
-       addPostDi: false
-     }
-   }
-   viewPosting(valua) {
-     this.setState({
-       addPostDiv: valua
-     })
-   }
-    render() {
-        return (
+function USerPostDiv() {
+  const [addPostDiv, setaddPostDiv] = useState(false);
+  const showPosting = () => setaddPostDiv(!addPostDiv);
+
+  return (
+
             <>
               <div className='New_post'>
               <div className='user_post'>
                 <img src={Ivon} alt='icon' className='iconUserPost' />
-                <input type='text' name='textPost' className='inputUserPost' placeholder='Create a Post  here....'></input>
+          <input type='text' name='textPost' onClick={showPosting} className='inputUserPost' placeholder='Create a Post  here....'></input>
               </div>
 
               <div className='btton_post'>
@@ -31,10 +23,10 @@ import PostedData from './Posted_Data'
               </div>
             </div>
 
-            <div className={this.state.addPostDiv ? 'posting_div shaw' : 'posting_div'} >
+      <div className={addPostDiv ? 'posting_div shaw' : 'posting_div'} >
+        <div className='blocker' onClick={showPosting} />
               <div className='AddPostCon'>
-              </div>
-              <div className='blocker' onClick={(e) => this.viewPosting(false)} />
+        </div>
 
               </div>
             <div className='PostedDataa'>
@@ -42,7 +34,6 @@ import PostedData from './Posted_Data'
             </div>
             </>
         )
-    }
 }
 
 export default USerPostDiv
