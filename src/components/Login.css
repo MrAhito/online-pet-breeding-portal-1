@@ -148,9 +148,9 @@ font-size: 1.5vw;
 
 .pet-reg{
     padding: 2.5vh 0 3% 1.25vw;
-    margin: 1vw;
+    margin: .5vw 1vw;
     border-radius: .8vw;
-    height: 51vh;
+    height: 54vh;
     border: .3vh solid #b9b8c2;
     display: grid;
     grid-template-columns: 1fr 1.6vw 1fr 1.6vw;
@@ -183,6 +183,7 @@ grid-column: 1/5;
     width: 33.8%;
     position: fixed;
     align-items: center;    
+    margin-bottom: 5vw;
     /* border: .3vh solid var(--borderColor); */
     border-bottom: .3vh solid var(--borderColor);
 }
@@ -214,22 +215,30 @@ grid-column: 1/5;
     border-top: .3vh solid #c8c7d1;
     position: fixed;
     display: flex;
-    padding: 1vw;
+    padding: .2vw .5vw .8vw .5vw;
     flex-direction: row;
     justify-content: center;
-    align-content: center;
-    width: 32.8%;
+    width: 34%;
     bottom: 5.05vw;
 }
 .avatarHolder{
     grid-column: 1/5;
-    border: 3px solid red;
+    border: .2vw solid var(--primaryColor);
     display: flex;
     border-radius: 50%;
-    margin: -2vw auto 0 10.9vw;
+    margin: -3vw auto -1.2vw 10.9vw;
     height: 15vh;
     width: 15vh;
+    padding: .3vh;
     flex-direction: row;
     align-content: center;
     justify-content: center;
+    cursor: pointer;
+}
+.avatarHolder > img {
+border-radius: 50%;
+}
+
+#txtEmails, #txtPword, #txtAddr{
+ grid-column: 1/4;
 }
