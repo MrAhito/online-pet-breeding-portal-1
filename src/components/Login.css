@@ -150,7 +150,6 @@ font-size: 1.5vw;
     padding: 2.5vh 0 3% 1.25vw;
     margin: .5vw 1vw;
     border-radius: .8vw;
-    height: 54vh;
     border: .3vh solid #b9b8c2;
     display: grid;
     grid-template-columns: 1fr 1.6vw 1fr 1.6vw;
@@ -199,11 +198,11 @@ grid-column: 1/5;
     flex-direction: row;
     justify-content: center;
     align-items: center;    
-    transition: 350ms all ease-in-out;
+    transition: 350ms  ease-in-out;
 }
 .exitBtn:hover{
     color: var(--secondaryColor);
-    transition: 350ms all ease-in-out;
+    transition: 350ms    ease-in-out;
     background-color: var(--primaryColor);
 }
 .tittle-reeg{
@@ -219,14 +218,15 @@ grid-column: 1/5;
     flex-direction: row;
     justify-content: center;
     width: 34%;
+    height: 4vw;
     bottom: 5.05vw;
 }
 .avatarHolder{
     grid-column: 1/5;
-    border: .2vw solid var(--primaryColor);
+    border: .15vw solid var(--primaryColor);
     display: flex;
     border-radius: 50%;
-    margin: -3vw auto -1.2vw 10.9vw;
+    margin: -1.1vw auto .5vw 10.9vw;
     height: 15vh;
     width: 15vh;
     padding: .3vh;
@@ -241,4 +241,29 @@ border-radius: 50%;
 
 #txtEmails, #txtPword, #txtAddr{
  grid-column: 1/4;
+}
+
+.reg_in{
+    padding: 0;
+    font-size: 1.85vh;
+    height: 5vh;
+    display: flex;
+    margin: .55vh;
+    border-radius: .5vw;
+    padding-left: 1vw;
+    outline: none;
+    border: .12vw solid var(--tertiaryColor);
+}
+.reg_in.gid{
+    display: none;
+}
+.reg_in:hover{
+    border: .12vw solid var(--primaryColor);
+
+}
+.pet-reg > select, .pet-reg > input[type=date]{
+    cursor: pointer;
+}
+.pet-reg > select{
+    height: 5.4vh;
 }

@@ -218,28 +218,28 @@ function RegUserForm() {
                         <img src={dpImg} alt='Profile' />
                         </div>
 
-                        <input type="text" name="txt-Fnme" placeholder='First Name:' ref={fnameRef} id="txtFname" />
+                        <input className='reg_in' type="text" name="txt-Fnme" placeholder='First Name:' ref={fnameRef} id="txtFname" />
                         <div className={errFName ? 'valida sh' : 'valida'}>
                             <faIcons.FaExclamationCircle></faIcons.FaExclamationCircle></div>
-                        <input type="text" name="txt-Lnme" placeholder='Last Name:' ref={lnameRef} id="txtLname" />
+                        <input  className='reg_in' type="text" name="txt-Lnme" placeholder='Last Name:' ref={lnameRef} id="txtLname" />
                         <div className={errLName ? 'valida sh' : 'valida'}>
                             <faIcons.FaExclamationCircle></faIcons.FaExclamationCircle></div>
-                        <input type="text" name="txt-Emai" placeholder='Email Address:' ref={regEmRef} id="txtEmails" />
+                        <input  className='reg_in' type="text" name="txt-Emai" placeholder='Email Address:' ref={regEmRef} id="txtEmails" />
                         <div className={errRegEm ? 'valida sh' : 'valida'}>
                             <faIcons.FaExclamationCircle></faIcons.FaExclamationCircle></div>
-                        <input type="text" name="txt-Addr" placeholder='Address:' ref={regAdRef}  id="txtAddr" />
+                        <input  className='reg_in' type="text" name="txt-Addr" placeholder='Address:' ref={regAdRef}  id="txtAddr" />
                         <div className={errRegAd ? 'valida sh' : 'valida'}>
                             <faIcons.FaExclamationCircle></faIcons.FaExclamationCircle></div>
-                        <input type="password" name="txt-Pwor" placeholder='Password:' ref={regPaRef} id="txtPword" />
+                        <input className='reg_in'  type="password" name="txt-Pwor" placeholder='Password:' ref={regPaRef} id="txtPword" />
                         <div className={errRegPa ? 'valida sh' : 'valida'}>
                             <faIcons.FaExclamationCircle></faIcons.FaExclamationCircle></div>
-                        <input type="tel" name="txt-Cnum" placeholder='Contact Number:' ref={conRef} id="txtCnum" />
+                        <input className='reg_in'  type="tel" name="txt-Cnum" placeholder='Contact Number:' ref={conRef} id="txtCnum" />
                         <div className={errCon ? 'valida sh' : 'valida'}>
                             <faIcons.FaExclamationCircle></faIcons.FaExclamationCircle></div>
-                        <input type="date" name="txt-Bdate" placeholder='Birth Date:' ref={bdateRef} id="txtBdate" />
+                        <input className='reg_in'  type="date" name="txt-Bdate" placeholder='Birth Date:' ref={bdateRef} id="txtBdate" />
                         <div className={errBday ? 'valida sh' : 'valida'}>
                             <faIcons.FaExclamationCircle></faIcons.FaExclamationCircle></div>
-                        <select name="txt-Gend" onChange={cGend} id="txtGend" ref={genRef} defaultValue={''}>
+                        <select className='reg_in'  name="txt-Gend" onChange={cGend} id="txtGend" ref={genRef} defaultValue={''}>
                             <option value="" disabled>Gender:</option>
                             <option value="male">Male</option>
                             <option value="female">Female</option>
@@ -247,8 +247,8 @@ function RegUserForm() {
                         </select>
                         <div className={errGen ? 'valida sh' : 'valida'}>
                             <faIcons.FaExclamationCircle></faIcons.FaExclamationCircle></div>
-                        <input type="text" name="txt-Gcus" ref={cusGRef} id="txtGcus" placeholder='Please specify:' />
-                        <div className={errCGen ? 'valida sh' : 'valida sh'}>
+                        <input  className={cgend ? 'reg_in' : 'reg_in gid'} type="text" name="txt-Gcus" ref={cusGRef} id="txtGcus" placeholder='Please specify:' />
+                        <div className={errCGen ? 'valida sh' : 'valida'}>
                             <faIcons.FaExclamationCircle></faIcons.FaExclamationCircle></div>
                     </div>
                 </div>
