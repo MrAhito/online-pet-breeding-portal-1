@@ -32,11 +32,6 @@ class USerPostDiv extends Component {
               </div>
               </div>
 
-            <div className={this.state.addPostDiv ? 'posting_div shaw' : 'posting_div'} >
-              <div className='AddPostCon'>
-              </div>
-              <div className='blocker' onClick={(e) => this.viewPosting(false)} />
-            </div>
 
             <div className='PostedDataa'>
             <PostedData />
