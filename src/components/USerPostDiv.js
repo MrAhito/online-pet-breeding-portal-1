@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import Ivon from '../images/icon.png'
-import * as  fiIlCons from 'react-icons/fi'
 import './USerPostDiv.css'
 import PostedData from './Posted_Data'
 
