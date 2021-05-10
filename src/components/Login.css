@@ -145,21 +145,12 @@ font-size: 1.5vw;
 .reg-form-c{
     display: none;
 }
-.reg-footer{
-    border-top: .3vh solid #c8c7d1;
-    height: 15vh;
-    display: flex;
-    position: fixed;
-    width: 35vw;
-    bottom: 10vh;
-    flex-direction: column;
-    align-items: center;
-}
 
 .pet-reg{
     padding: 2.5vh 0 3% 1.25vw;
-    margin: -28vh  1vw 3% 3%;
+    margin: 1vw;
     border-radius: .8vw;
+    height: 51vh;
     border: .3vh solid #b9b8c2;
     display: grid;
     grid-template-columns: 1fr 1.6vw 1fr 1.6vw;
@@ -218,4 +209,27 @@ grid-column: 1/5;
     margin: 0;
     color: var(--primaryColor);
     font-size: 4.05vh;
+}
+.reg-footer{
+    border-top: .3vh solid #c8c7d1;
+    position: fixed;
+    display: flex;
+    padding: 1vw;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    width: 32.8%;
+    bottom: 5.05vw;
+}
+.avatarHolder{
+    grid-column: 1/5;
+    border: 3px solid red;
+    display: flex;
+    border-radius: 50%;
+    margin: -2vw auto 0 10.9vw;
+    height: 15vh;
+    width: 15vh;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
 }

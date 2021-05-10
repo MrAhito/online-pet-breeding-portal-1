@@ -20,6 +20,8 @@ function RegUserForm() {
     const petSpeciRef = useRef();
     const petBreedRef = useRef();
 
+    const [dpImg, setdpImg] = useState('https://www.shareicon.net/data/256x256/2017/02/15/878685_user_512x512.png');
+
     const [cgend, setcgend] = useState(false);
     const [errFName, setFName] = useState(false);
     const [errLName, setLName] = useState(false);
@@ -212,7 +214,9 @@ function RegUserForm() {
                 <div>
                     <div className="pet-reg fixs">
                         <div className="pet-title"><h1>User Information </h1></div>
-                        
+                        <div className='avatarHolder'>
+                        <img src={dpImg} alt='Profile' />
+                        </div>
 
                         <input type="text" name="txt-Fnme" placeholder='First Name:' ref={fnameRef} id="txtFname" />
                         <div className={errFName ? 'valida sh' : 'valida'}>
