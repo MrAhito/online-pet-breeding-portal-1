@@ -23,6 +23,7 @@
 }
 .log-title h1{
 margin-bottom: 0;
+margin-top: 7vw;
 font-size: 3.5vw;
 }
 .log-title p{
@@ -116,26 +117,6 @@ font-size: 1.5vw;
 .reg-container.show{
     display: block;
 }
-.exitBtn{
-    color: var(--primaryColor);
-    font-size: 5vh;
-    width: 4.2vh;
-    outline: none;
-    height: 4.2vh;
-    margin:  auto 1.5vh;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    border: .5vh solid var(--primaryColor);
-    border-radius: 60%;
-}
-.exitBtn:hover{
-    color: var(--secondaryColor);
-    background-color: var(--primaryColor);
-    transition: all 0.3s ease-in-out;
-}
 .reg-header-continer{
     display: flex;
     margin: auto;
@@ -152,7 +133,7 @@ font-size: 1.5vw;
     align-items: center;
     justify-content: center;
     color:transparent;
-    font-size: 1.4vw;
+    font-size: 1.2vw;
 }
 .valida.sh{
     color: #ca2c2c;
@@ -198,21 +179,43 @@ grid-column: 1/5;
     color: var(--primaryColor);
     background-color: var(--secondaryColor);
 }
-
-.reg-heder{ 
-    position: fixed;
-    display: flex;
-    top: 8.5vh;
-    width: 35vw;
-    height: 8.5vh;
-    flex-direction: row-reverse;
-    border-bottom: .3vh solid #c8c7d1;
-}
-.tittle-reeg{
-    font-size: 4.5vh;
-    margin: auto;
-    color: var(--primaryColor);
-}
 .fixs{
     margin-top:-1.6vh;
+}
+
+.reg-heder{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    padding: 1vh;
+    top: 3.35vw;
+    width: 33.8%;
+    position: fixed;
+    align-items: center;    
+    /* border: .3vh solid var(--borderColor); */
+    border-bottom: .3vh solid var(--borderColor);
+}
+.exitBtn{
+    padding: .2vw;
+    border: .4vh solid var(--primaryColor);
+    display: flex;
+    font-size: 2vw;
+    border-radius: 50%;
+    position: fixed;
+    color: var(--primaryColor);
+    right: 33vw;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;    
+    transition: 350ms all ease-in-out;
+}
+.exitBtn:hover{
+    color: var(--secondaryColor);
+    transition: 350ms all ease-in-out;
+    background-color: var(--primaryColor);
+}
+.tittle-reeg{
+    margin: 0;
+    color: var(--primaryColor);
+    font-size: 4.05vh;
 }

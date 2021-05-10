@@ -212,6 +212,8 @@ function RegUserForm() {
                 <div>
                     <div className="pet-reg fixs">
                         <div className="pet-title"><h1>User Information </h1></div>
+                        
+
                         <input type="text" name="txt-Fnme" placeholder='First Name:' ref={fnameRef} id="txtFname" />
                         <div className={errFName ? 'valida sh' : 'valida'}>
                             <faIcons.FaExclamationCircle></faIcons.FaExclamationCircle></div>
@@ -233,8 +235,8 @@ function RegUserForm() {
                         <input type="date" name="txt-Bdate" placeholder='Birth Date:' ref={bdateRef} id="txtBdate" />
                         <div className={errBday ? 'valida sh' : 'valida'}>
                             <faIcons.FaExclamationCircle></faIcons.FaExclamationCircle></div>
-                        <select name="txt-Gend" onChange={cGend} id="txtGend" ref={genRef} defaultValue={'DEFAULT'}>
-                            <option value="DEFAULT" disabled>Gender:</option>
+                        <select name="txt-Gend" onChange={cGend} id="txtGend" ref={genRef} defaultValue={''}>
+                            <option value="" disabled>Gender:</option>
                             <option value="male">Male</option>
                             <option value="female">Female</option>
                             <option value="custome">Custom</option>
@@ -242,7 +244,7 @@ function RegUserForm() {
                         <div className={errGen ? 'valida sh' : 'valida'}>
                             <faIcons.FaExclamationCircle></faIcons.FaExclamationCircle></div>
                         <input type="text" name="txt-Gcus" ref={cusGRef} id="txtGcus" placeholder='Please specify:' />
-                        <div className={errCGen ? 'valida sh' : 'valida'}>
+                        <div className={errCGen ? 'valida sh' : 'valida sh'}>
                             <faIcons.FaExclamationCircle></faIcons.FaExclamationCircle></div>
                     </div>
                 </div>
