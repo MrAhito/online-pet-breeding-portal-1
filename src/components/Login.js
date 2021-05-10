@@ -51,7 +51,7 @@ function Login() {
                         <input type="password" name="pword" ref={passRef} id="txt-pass" placeholder="Password" className="txt txpass" required />
                         <a href='#home' className='fic'><span className='validate'>{validate}</span></a>
                         <button className="btn btn-submit " id="btn-sub" onClick={login}>Log In</button>
-                        <a href='#home' className='fica'>Forgot Password?</a>
+                        <a href='#home' className='fic'>Forgot Password?</a>
                         <div className='bordertop' />
                         <Link to='' onClick={sh}>
                             <button className="btn btn-reg">Create New Account</button>

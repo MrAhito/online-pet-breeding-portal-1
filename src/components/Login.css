@@ -85,6 +85,7 @@ font-size: 1.5vw;
 }
 .btn-submit:hover, .btn-sub:hover, .btn-reg{
     transition: all 0.2s ease-in-out;
+    cursor: pointer;
     border: .33vh solid var(--primaryColor);
     color: var(--primaryColor);
     background-color: transparent;
@@ -163,24 +164,6 @@ font-size: 1.5vw;
 .reg-form-c{
     display: none;
 }
-.pet-reg input{
-    margin: .75vh 0 .75vh 0;
-}
-
-#txtEmails, #txtAddr, #txtPword{
-grid-column: 1/4;
-}
-#txtCnum, #txtGend,#txtFname, #txtAnme{
-    width: 11.5vw;
-}
-.pet-reg select{
-    height: 6vh;
-    width: 13.6vw;
-    margin: .75vh 0 .75vh 0;
-}
-.txt.show{
-    display: none;
-}
 .reg-footer{
     border-top: .3vh solid #c8c7d1;
     height: 15vh;
@@ -202,7 +185,7 @@ grid-column: 1/4;
 
 }
 .pet-title{
-margin:-3.89vh 0 1vh -0.6vw;
+margin:-4.89vh 0 1vh -0.6vw;
 grid-column: 1/5;
 }
 .pet-title h1{

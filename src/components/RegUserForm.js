@@ -212,28 +212,28 @@ function RegUserForm() {
                 <div>
                     <div className="pet-reg fixs">
                         <div className="pet-title"><h1>User Information </h1></div>
-                        <input type="text" name="txt-Fnme" placeholder='First Name:' ref={fnameRef} className='txt Fnme' id="txtFname" />
+                        <input type="text" name="txt-Fnme" placeholder='First Name:' ref={fnameRef} id="txtFname" />
                         <div className={errFName ? 'valida sh' : 'valida'}>
                             <faIcons.FaExclamationCircle></faIcons.FaExclamationCircle></div>
-                        <input type="text" name="txt-Lnme" placeholder='Last Name:' ref={lnameRef} className='txt Lnme' id="txtLname" />
+                        <input type="text" name="txt-Lnme" placeholder='Last Name:' ref={lnameRef} id="txtLname" />
                         <div className={errLName ? 'valida sh' : 'valida'}>
                             <faIcons.FaExclamationCircle></faIcons.FaExclamationCircle></div>
-                        <input type="text" name="txt-Emai" placeholder='Email Address:' ref={regEmRef} className='txt EmailtxT' id="txtEmails" />
+                        <input type="text" name="txt-Emai" placeholder='Email Address:' ref={regEmRef} id="txtEmails" />
                         <div className={errRegEm ? 'valida sh' : 'valida'}>
                             <faIcons.FaExclamationCircle></faIcons.FaExclamationCircle></div>
-                        <input type="text" name="txt-Addr" placeholder='Address:' ref={regAdRef} className='txt AddR' id="txtAddr" />
+                        <input type="text" name="txt-Addr" placeholder='Address:' ref={regAdRef}  id="txtAddr" />
                         <div className={errRegAd ? 'valida sh' : 'valida'}>
                             <faIcons.FaExclamationCircle></faIcons.FaExclamationCircle></div>
-                        <input type="password" name="txt-Pwor" placeholder='Password:' ref={regPaRef} className='txt PassworD' id="txtPword" />
+                        <input type="password" name="txt-Pwor" placeholder='Password:' ref={regPaRef} id="txtPword" />
                         <div className={errRegPa ? 'valida sh' : 'valida'}>
                             <faIcons.FaExclamationCircle></faIcons.FaExclamationCircle></div>
-                        <input type="tel" name="txt-Cnum" placeholder='Contact Number:' ref={conRef} className='txt CnuM' id="txtCnum" />
+                        <input type="tel" name="txt-Cnum" placeholder='Contact Number:' ref={conRef} id="txtCnum" />
                         <div className={errCon ? 'valida sh' : 'valida'}>
                             <faIcons.FaExclamationCircle></faIcons.FaExclamationCircle></div>
-                        <input type="date" name="txt-Bdate" placeholder='Birth Date:' ref={bdateRef} className='txt BdatE' id="txtBdate" />
+                        <input type="date" name="txt-Bdate" placeholder='Birth Date:' ref={bdateRef} id="txtBdate" />
                         <div className={errBday ? 'valida sh' : 'valida'}>
                             <faIcons.FaExclamationCircle></faIcons.FaExclamationCircle></div>
-                        <select name="txt-Gend" onChange={cGend} id="txtGend" ref={genRef} className="txt GenD" defaultValue={'DEFAULT'}>
+                        <select name="txt-Gend" onChange={cGend} id="txtGend" ref={genRef} defaultValue={'DEFAULT'}>
                             <option value="DEFAULT" disabled>Gender:</option>
                             <option value="male">Male</option>
                             <option value="female">Female</option>
@@ -241,7 +241,7 @@ function RegUserForm() {
                         </select>
                         <div className={errGen ? 'valida sh' : 'valida'}>
                             <faIcons.FaExclamationCircle></faIcons.FaExclamationCircle></div>
-                        <input type="text" name="txt-Gcus" className={cgend ? 'txt' : 'txt show'} ref={cusGRef} id="txtGcus" placeholder='Please specify:' />
+                        <input type="text" name="txt-Gcus" ref={cusGRef} id="txtGcus" placeholder='Please specify:' />
                         <div className={errCGen ? 'valida sh' : 'valida'}>
                             <faIcons.FaExclamationCircle></faIcons.FaExclamationCircle></div>
                     </div>
@@ -254,13 +254,13 @@ function RegUserForm() {
                 <div>
                     <div className="pet-reg">
                         <div className="pet-title"><h1>Pet Information </h1></div>
-                        <input type="text" name="txt-Anme" placeholder='Name:' className='txt Anme'  ref={petNameRef} id="txtAnme" />
+                        <input type="text" name="txt-Anme" placeholder='Name:'  ref={petNameRef} id="txtAnme" />
                         <div  className={errPName ? 'valida sh' : 'valida'}>
                             <faIcons.FaExclamationCircle></faIcons.FaExclamationCircle></div>
-                            <input type="date" name="txt-PDate" placeholder='Birth Date:' ref={petDateRef} className='txt BdatE' id="txtBdate" />
+                            <input type="date" name="txt-PDate" placeholder='Birth Date:' ref={petDateRef} id="txtBdate" />
                             <div className={errPDate ? 'valida sh' : 'valida'}>
                                 <faIcons.FaExclamationCircle></faIcons.FaExclamationCircle></div>
-                        <select name="txt-Spec" id="txtSpec" ref={petSpeciRef}  defaultValue={'DEFAULT'} className="txt SpeC">
+                        <select name="txt-Spec" id="txtSpec" ref={petSpeciRef}  defaultValue={'DEFAULT'} >
                             <option value="DEFAULT"  disabled>Species:</option>
                             <option value="Dog">Dog</option>
                             <option value="Cat">Cat</option>
@@ -269,7 +269,7 @@ function RegUserForm() {
                         <div className={errPSpec ? 'valida sh' : 'valida'}>
                             <faIcons.FaExclamationCircle></faIcons.FaExclamationCircle>
                         </div>
-                    <select name="txt-Bred" id="txtBred" ref={petBreedRef} defaultValue={'DEFAULT'} className="txt BreD">
+                    <select name="txt-Bred" id="txtBred" ref={petBreedRef} defaultValue={'DEFAULT'} >
                         <option value="DEFAULT"  disabled>Breed:</option>
                         <option value="breed1">Breed 1</option>
                         <option value="breed2">Breed 2</option>
@@ -277,7 +277,7 @@ function RegUserForm() {
                     <div className={errPBred ? 'valida sh' : 'valida'}>
                         <faIcons.FaExclamationCircle></faIcons.FaExclamationCircle>
                     </div>
-                            <select name="txt-Gend" id="txtPGend" ref={petGenderRef}  defaultValue={'DEFAULT'} className="txt PgenD">
+                            <select name="txt-Gend" id="txtPGend" ref={petGenderRef}  defaultValue={'DEFAULT'}>
                             <option value="DEFAULT"  disabled>Gender:</option>
                             <option value="male">Male</option>
                             <option value="female">Female</option>
