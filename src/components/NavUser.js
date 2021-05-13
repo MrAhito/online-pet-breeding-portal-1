@@ -21,15 +21,15 @@ class NavUser extends Component {
     }
      getID () {
        auth.onAuthStateChanged(user => {
-            console.log(user)
+           if(!( user === null)){
            this.setState({
             userName : user.displayName,
             userProfile : user.photoURL
            })
+        }else{
+
+        }
        });
-        // this.setState({
-        //     userName: 'UserName',
-        // })
     }
     
     componentWillMount(){
