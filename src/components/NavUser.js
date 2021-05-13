@@ -5,11 +5,12 @@ import '../components/NavUser.css'
 import NotifDiv from './NotifDiv'
 import UserSetting from './UserSetting'
 import  { auth } from '../firebase/firebase'
+import { Link } from 'react-router-dom'
 
 class NavUser extends Component {
 
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
         this.state = {
             userName: '',
             userProfile: '',
@@ -61,9 +62,9 @@ class NavUser extends Component {
 
 
                 <div className='cs_div'>
-                <div className='CgICons mainDiv'>
+                <Link to='/dashboard' className='CgICons mainDiv'>
                 <aiIcons.CgFeed className='userNavIcons'  alt='newsfeed' title='Home'/>
-                </div>
+                </Link>
                 <div className='CgICons mainDiv'>
                 <aiIcons.CgTimelapse className='userNavIcons'  alt='find' title='Find Breeder   '/>
                 </div>
@@ -72,10 +73,10 @@ class NavUser extends Component {
 
                 <div className='userIcons'>
 
-                <div className='CgICons CProfile'  onClick={(e) => this.changeVieae('Blocker', false, false, false, false)}>
+                <Link to='/userprofile' className={'CgICons CProfile ' + this.props.classN}  onClick={(e) => this.changeVieae('Blocker', false, false, false, false)}>
                 <img src={this.state.userProfile} alt='icon' className='userNavIconsImg'/>   
                     <span className='userNavname'>{this.state.userName}</span>
-                </div>
+                </Link>
                 <div className='CgICons' onClick={(e) => this.changeVieae('Messages', false, !this.state.visibleM, false, true)}>
                     <aiIcons.CgMail className='userNavIcons'  />
                 </div>

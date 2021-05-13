@@ -4,6 +4,7 @@ import './App.css';
 import HomePage from './pages/HomePage';
 import Dashboard from './pages/Dashboard';
 import Admin from './pages/Admin';
+import ProfileUser from './pages/ProfileUser';
 
 function App() {
 
@@ -17,8 +18,11 @@ function App() {
           <Route path='/dashboard' exact component={Dashboard} />
         </Switch>
         <Switch>
-        <Route path='/admin' exact component={Admin} />
-      </Switch>
+          <Route path='/admin' exact component={Admin} />
+        </Switch>
+        <Switch>
+          <Route path='/userprofile' exact component={ProfileUser}/>
+        </Switch>
       </Router>
     </>
   );

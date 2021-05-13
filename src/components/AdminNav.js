@@ -14,13 +14,13 @@ function AdminNav() {
     }
     return (
         <>
-           <div className='nav adminNav'>
+           <nav className='nav adminNav'>
                 <aiIcons.CgMenuGridR className='userNavIcons' onClick={showSideBar} />
                 <img alt="logo" src={LogoNav} className="nav-logo" />
                 <img alt='Profile' src={Dp} className='iconAdmin'/>
                <aiIcons.CgLogOut  className='userNavIcons'  title='LogOut' onClick={redirec}/>
                
-            </div>
+            </nav>
           
             <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
 

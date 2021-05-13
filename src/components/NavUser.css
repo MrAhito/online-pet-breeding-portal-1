@@ -42,6 +42,9 @@
     justify-content: space-around;
     align-items: center;
 }
+.userIcons{
+    margin-right: .5vw;
+}
 .userNavIcons{
     font-size: 4vh;
 }
@@ -56,6 +59,8 @@
     flex-direction: row;
     text-align: center;
     padding: .65vw;
+    color: var(--tertiaryColor);
+    text-decoration: none;
     border-radius: 2.5vw;
     align-items: center;
     transition: .2s ease-in-out;
@@ -78,6 +83,10 @@
 
 .CgICons span{
     user-select: none;
+    font-size: 1.2vw;
+    font-weight: 900;
+    text-decoration: none;
+
 }
 .notif_div{
     position: fixed;
@@ -109,4 +118,12 @@
     bottom: 0;
     display: flex;
     position: fixed;
+}
+.fixes{
+    background-color: var(--borderColor);
+    transition: .3s ease-in-out;
+}
+.fixes:hover{
+    background-color: transparent;
+    transition: .3s ease-in-out;
 }
