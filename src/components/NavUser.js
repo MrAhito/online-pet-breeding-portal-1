@@ -4,7 +4,7 @@ import * as aiIcons from 'react-icons/cg'
 import '../components/NavUser.css'
 import NotifDiv from './NotifDiv'
 import UserSetting from './UserSetting'
-import firebaseDb, { auth } from '../firebase/firebase'
+import  { auth } from '../firebase/firebase'
 
 class NavUser extends Component {
 
