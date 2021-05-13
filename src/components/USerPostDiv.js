@@ -32,10 +32,13 @@ class USerPostDiv extends Component {
         return (
             <>
               <div className='New_post'>
-              <div className='user_post'>
-              <img src={this.state.userProfile} alt='icon' className='iconUserPost'/>
-              <input type='text' name='textPost' className='inputUserPost' placeholder='Create a Post  here....'></input>
-              </div>
+                <div className='user_post'>
+                        <img src={this.state.userProfile} alt='icon' className='iconUserPost'/>
+                        <input type='text' name='textPost' className='inputUserPost' placeholder='Create a Post  here....'></input>
+                    <div className='buttonsPost'>
+                        
+                    </div>
+                </div>
               </div>
             </>
         )

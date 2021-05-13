@@ -16,7 +16,8 @@ class NavUser extends Component {
             titleName: '',
             visibke: false,
             visibleM: false,
-            visibleS: false
+            visibleS: false,
+            visibleB: false,
         }
     }
      getID () {
@@ -36,12 +37,13 @@ class NavUser extends Component {
         this.getID();
     } 
 
-    changeVieae(ComName, visiMe, visiNO, visiSE) {
+    changeVieae(ComName, visiMe, visiNO, visiSE, visiBl) {
         this.setState({
             titleName: ComName,
             visibke: visiMe,
             visibleM: visiNO,
-            visibleS: visiSE
+            visibleS: visiSE,
+            visibleB: visiBl
 
         })
     }
@@ -69,28 +71,31 @@ class NavUser extends Component {
 
 
                 <div className='userIcons'>
-                <div className='CgICons CProfile'>
+
+                <div className='CgICons CProfile'  onClick={(e) => this.changeVieae('Blocker', false, false, false, false)}>
                 <img src={this.state.userProfile} alt='icon' className='userNavIconsImg'/>   
                     <span className='userNavname'>{this.state.userName}</span>
                 </div>
-                <div className='CgICons' onClick={(e) => this.changeVieae('Messages', false, !this.state.visibleM, false)}>
+                <div className='CgICons' onClick={(e) => this.changeVieae('Messages', false, !this.state.visibleM, false, true)}>
                     <aiIcons.CgMail className='userNavIcons'  />
                 </div>
                 <div  className={this.state.visibleM ? 'notif_div shiw' : 'notif_div' }>
                 <NotifDiv titleName={this.state.titleName} />
                 </div>
-                <div  className='CgICons' onClick={(e) => this.changeVieae('Notifications', !this.state.visibke,false, false)} >
+                <div  className='CgICons' onClick={(e) => this.changeVieae('Notifications', !this.state.visibke,false, false, true)} >
                     <aiIcons.CgNotifications className='userNavIcons' />
                 </div>
                 <div  className={this.state.visibke  ? 'notif_div shiw' : 'notif_div' }>
                 <NotifDiv titleName={this.state.titleName} />
                 </div>
-                <div className='CgICons' onClick={(e) => this.changeVieae('Settings',false, false, !this.state.visibleS)} >
+                <div className='CgICons' onClick={(e) => this.changeVieae('Settings',false, false, !this.state.visibleS, true)} >
                     <aiIcons.CgMenu className='userNavIcons' />
                 </div>
                 <div  className={this.state.visibleS  ? 'notif_div shiw' : 'notif_div' }>
                 <UserSetting titleName={this.state.titleName} />
                 </div>
+                <div  className={this.state.visibleB  ? 'blockera shiw' : 'notif_div' }
+                 onClick={(e) => this.changeVieae('Blocker', false, false, false, false)}></div>
 
                 </div>
 
