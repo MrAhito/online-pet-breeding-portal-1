@@ -23,7 +23,7 @@ class USerPostDiv extends Component {
         });
     }
     
-    componentWillMount(){
+    componentDidMount(){
         this.getID();
     } 
 

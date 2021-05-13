@@ -34,7 +34,7 @@ class NavUser extends Component {
        });
     }
     
-    componentWillMount(){
+    componentDidMount(){
         this.getID();
     } 
 
