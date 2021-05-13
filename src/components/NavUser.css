@@ -120,10 +120,12 @@
     position: fixed;
 }
 .fixes{
-    background-color: var(--borderColor);
+    background-color: var(--primaryColor1);
     transition: .3s ease-in-out;
+    color:var(--primaryColor);
 }
 .fixes:hover{
-    background-color: transparent;
+    background-color: var(--borderColor);
     transition: .3s ease-in-out;
+    color: var(--tertiaryColor);
 }

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import * as aiIcons from 'react-icons/cg'
 import { auth } from '../firebase/firebase'
 import './USerPostDiv.css'
 
@@ -35,10 +36,10 @@ class USerPostDiv extends Component {
                 <div className='user_post'>
                         <img src={this.state.userProfile} alt='icon' className='iconUserPost'/>
                         <input type='text' name='textPost' className='inputUserPost' placeholder='Create a Post  here....'></input>
-                    <div className='buttonsPost'>
-                        
-                    </div>
                 </div>
+                <div className='buttonsPost'>
+                        <div className='addImage'><aiIcons.CgImage/></div>
+                    </div>
               </div>
             </>
         )
