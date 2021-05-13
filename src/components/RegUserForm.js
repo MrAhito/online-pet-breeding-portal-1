@@ -2,8 +2,12 @@ import React, { useRef, useState } from 'react'
 import * as faIcons from 'react-icons/fa'
 import {  useHistory } from "react-router-dom";
 import fireBaseDB, { auth } from '../firebase/firebase';
+import Axios from 'axios'
+import { BreedDataCat, BreedDataDog, BreedDatadefault } from './SelectData';
+
 function RegUserForm() {
     const history = useHistory();
+    const [breedData, setbreedData] = useState(BreedDatadefault);
 
     const fnameRef = useRef();
     const lnameRef = useRef();
@@ -24,38 +28,26 @@ function RegUserForm() {
     const hiddenFileInput = useRef(null);
     const hiddenFileInput2 = useRef(null);
     
-    const [dpImg, setdpImg] = useState('https://www.shareicon.net/data/256x256/2017/02/15/878685_user_512x512.png');
-    const [petImg, setpetImg] = useState('https://res.cloudinary.com/pet-breeding/image/upload/v1620600697/b5arwppmaihcbukxdzin.png');
-
     const [cgend, setcgend] = useState(false);
-    const [errFName, setFName] = useState(false);
-    const [errLName, setLName] = useState(false);
-    const [errRegEm, setRegEm] = useState(false);
-    const [errRegAd, setRegAd] = useState(false);
-    const [errRegPa, setRegPa] = useState(false);
-    const [errCon, setCon] = useState(false);
-    const [errBday, setBday] = useState(false);
-    const [errGen, setGen] = useState(false);
-    const [errPName, setPName] = useState(false);
-    const [errPDate, setPDate] = useState(false);
-    const [errPSpec, setPSpec] = useState(false);
-    const [errPBred, setPBred] = useState(false);
-    const [errPGend, setPGend] = useState(false);
+    const [errFName, setFName] = useState(true);
+    const [errLName, setLName] = useState(true);
+    const [errRegEm, setRegEm] = useState(true);
+    const [errRegAd, setRegAd] = useState(true);
+    const [errRegPa, setRegPa] = useState(true);
+    const [errCon, setCon] = useState(true);
+    const [errBday, setBday] = useState(true);
+    const [errGen, setGen] = useState(true);
+    const [errPName, setPName] = useState(true);
+    const [errPDate, setPDate] = useState(true);
+    const [errPSpec, setPSpec] = useState(true);
+    const [errPBred, setPBred] = useState(true);
+    const [errPGend, setPGend] = useState(true);
     const [errCGen, setCGen] = useState(false);
     const [errPWeight, setPWeight] = useState(false);
     const [errPHeight, setPHeight] = useState(false);
     const [showPet, setshowPet] = useState(true);
+    const [visiPas, setvisiPas] = useState(false);
     const petSHow = () => setshowPet(!showPet);
-
-    const cGend = (e) => {
-        const selVal = e.target.value;
-        if (selVal === "custome") {
-            setcgend(true);
-        } else {
-            setcgend(false);
-        }
-    }
-
 
     const [FirstName, setFirstName] = useState("");
     const [LastName, setLastName] = useState("");
@@ -73,7 +65,28 @@ function RegUserForm() {
     const [PetsWeight, setPetsWeight] = useState("");
     const [PetsHeight, setPetsHeight] = useState("");
 
-    const signUp = (e) =>{
+    const [dpImg, setdpImg] = useState('https://www.shareicon.net/data/256x256/2017/02/15/878685_user_512x512.png');
+    const [petImg, setpetImg] = useState('https://res.cloudinary.com/pet-breeding/image/upload/v1620600697/b5arwppmaihcbukxdzin.png');
+    const [userIMGUp, setuserIMGUp] = useState(null);
+    const [petIMGUp, setpetIMGUp] = useState(null);
+
+    const cGend = (e) => {
+        e.preventDefault();
+       
+        if (genRef.current.value.replace(/\s/g, "").length <= 0) {
+            setGen(true);
+        } else if (genRef.current.value === "custome") {
+            setcgend(true);
+        } else {
+            setCGen(false);
+            cusGRef.current.value ='';
+            setcgend(false);
+            setGender(genRef.current.value);
+            setGen(false);
+        }
+    }
+
+    async function signUp (e) {
         const petName = petNameRef.current.value;
         const petDate = petDateRef.current.value;
         const petSpeci = petSpeciRef.current.value;
@@ -84,86 +97,116 @@ function RegUserForm() {
     
         if (petName.replace(/\s/g, "").length <= 0) {
             setPName(true);
-        } else {
-            setPName(false);
-            setPetName(petName);
         }
         if (petDate.replace(/\s/g, "").length <= 0) {
             setPDate(true);
-        } else {
-            setPBdate(petDate);
-            setPDate(false);
-        }
+        } 
         if (petSpeci.replace(/\s/g, "").length <= 0) {
             setPSpec(true);
-        } else {
-            setPetSpec(petSpeci);
-            setPSpec(false);
-        }
+        } 
         if (petBreed.replace(/\s/g, "").length <= 0) {
             setPBred(true);
-        } else {
-            setPetBreed(petBreed);
-            setPBred(false);
-        }
+        } 
         if (petGender.replace(/\s/g, "").length <= 0) {
             setPGend(true);
-        } else {
-            setPetGend(petGender);
-            setPGend(false);
-        }
+        } 
         if (petWeight.replace(/\s/g, "").length <= 0) {
             setPWeight(true);
-        } else {
-            setPetsWeight(petWeight);
-            setPWeight(false);
-        }
+        } 
         if (petHeight.replace(/\s/g, "").length <= 0) {
             setPHeight(true);
-        } else {
-            setPetsHeight(petHeight);
-            setPHeight(false);
         }
 
-        if(!petNameRef.current.value.replace(/\s/g, "").length <= 0 && !petDateRef.current.value.replace(/\s/g, "").length <= 0 
-        && !petSpeciRef.current.value.replace(/\s/g, "").length <= 0 && !petBreedRef.current.value.replace(/\s/g, "").length <= 0
-        && !petGenderRef.current.value.replace(/\s/g, "").length <= 0 && !petHeightRef.current.value.replace(/\s/g, "").length <= 0
-        && !petWeightRef.current.value.replace(/\s/g, "").length <= 0){
-                e.preventDefault();
-                auth.createUserWithEmailAndPassword(
-                   Email, PassWord
-                ).then(user => {
-                    if (!user) return;
-                    const userRef = fireBaseDB.doc("users/" + auth.currentUser.uid);
-                    const pettRef = fireBaseDB.doc("pets/" + auth.currentUser.uid);
-                    const snaps = userRef.get();
-                
-                    if (!snaps.exist) {
-                        const {email} = user;
-                        const {displayName} = FirstName;
-                        const {displayLastName} = LastName;
-                        
-                        try {
-                            userRef.set({
-
-                            
-                            });
-                            pettRef.set({
-                                createdAt: new Date(), PetName, PetBDate, PetSpec, PetBreed, PetGend, PetsWeight, PetsHeight, 
-
-                            });
-                    history.push('/dashboard');
-                        } catch (error) {
-                            console.log("Error in creating user info", error);
-                        }
-                    }
-                }).catch(err => {
-                   
-                });
+        if ( errPName === false && errPBred === false && errPDate === false && errPGend === false && errPSpec === false && errPWeight === false
+            && errPHeight === false){
+                var a = dpImg, b = petImg;
+                if(!(userIMGUp === null)){
+                     a = await uploadImage(userIMGUp);
+                    console.log("Link user fetch: "  + a);
+                 }
+                if(!(petIMGUp === null)){
+                    b = await uploadImage(petIMGUp);
+                console.log("Link pet fetch: "  + b);
+                }
+                createuser(a, b);
             }
         }
+    
+     async  function uploadImage (imgUser) {
+             const  formData = new FormData()
+             var linking = ''
+            formData.append('file', imgUser, imgUser.name);
+            formData.append('upload_preset', 'r5byh8yh')
+            await Axios.post("https://api.cloudinary.com/v1_1/pet-breeding/image/upload", formData, {
+                onUploadProgress : progressEvent => {
+                    console.log('Upload Progress: ' + Math.round(progressEvent.loaded / progressEvent.total * 100) + '%')}
+            }).then(res => { 
+                const link = res.data.url
+                linking = link;
+            })
+            .catch (err => { console.error(err)})
+              return(linking)
+        }
 
-    const showError = () => {
+const createuser = (u, p) => {
+    console.log("this is user link: " + u + "\nthis is pet link: " + p)
+        auth.createUserWithEmailAndPassword(
+        Email, PassWord
+     ).then(user => {
+         if (!user) return;
+         console.log("Creating User Started")
+         user.user.updateProfile({
+            displayName : FirstName,
+            photoURL : u,
+         }).then(user  => {
+            const uids = auth.currentUser.uid;
+            const userRef = fireBaseDB.doc("users/" + uids);
+            const pettRef = fireBaseDB.doc("pets/" + uids);
+            const snaps =  userRef.get();
+            if (!snaps.exist) {
+                try {
+                    userRef.set({
+                        uid : uids,
+                        photoURL : u,
+                        Timestamp : new Date(),
+                        Firstname : FirstName, 
+                        Lastname : LastName,  
+                        Address,
+                        Birthdate : BirthDate,
+                        Pasword : PassWord,
+                        phoneNum : Contact,
+                        email : Email,
+                        Gender,
+                    })
+                    pettRef.set({
+                        Timestamp : new Date(),
+                        PetId: uids + " - 1",
+                        photoURL : p,
+                        Name : PetName,
+                        Birthdate : PetBDate,
+                        Owner : FirstName + " " + LastName,
+                        OwnerId : uids,
+                        Gender : PetGend,
+                        Breed : PetBreed,
+                        Species : PetSpec,
+                        Weight : PetsWeight + " grams",
+                        Height : PetsHeight + " cm",
+                    });
+                         history.push('/dashboard');
+                }catch (error) {
+                         console.log("Error in creating user info", error);
+                }
+            }
+         }
+         ).catch(err => {
+            console.log("Error in creating user info", err);
+         })
+     }).catch(err => {
+        console.log("Error in creating user info", err);
+    });
+}
+
+const showError = () => {
         const firstName = fnameRef.current.value;
         const lastName = lnameRef.current.value;
         const regEmail = regEmRef.current.value;
@@ -173,122 +216,153 @@ function RegUserForm() {
         const birthDate = bdateRef.current.value;
         const genDer = genRef.current.value;
         const customGen = cusGRef.current.value;
+
         if (firstName.replace(/\s/g, "").length <= 0) {
             setFName(true);
-        } else {
-            setFName(false);
-            setFirstName(firstName);
-        }
+        } 
         if (lastName.replace(/\s/g, "").length <= 0) {
             setLName(true);
-        } else {
-            setLastName(lastName);
-            setLName(false);
         }
         if (regEmail.replace(/\s/g, "").length <= 0) {
             setRegEm(true);
-        } else {
-            setEmail(regEmail);
-            setRegEm(false);
         }
         if (regAddress.replace(/\s/g, "").length <= 0) {
             setRegAd(true);
-        } else {
-            setAddr(regAddress);
-            setRegAd(false);
         }
         if (regPass.replace(/\s/g, "").length <= 0) {
             setRegPa(true);
-        } else {
-            setPWord(regPass);
-            setRegPa(false);
         }
         if (conNum.replace(/\s/g, "").length <= 0) {
             setCon(true);
-        } else {
-            setContact(conNum);
-            setCon(false);
-        }
+        } 
         if (birthDate.replace(/\s/g, "").length <= 0) {
             setBday(true);
-        } else {
-            setBDate(birthDate);
-            setBday(false);
-        }
+        } 
         if (genDer.replace(/\s/g, "").length <= 0) {
             setGen(true);
         } else if (genDer === "custome") {
             if (customGen.replace(/\s/g, "").length <= 0) {
                 setCGen(true);
-            } else {
-            setGender(customGen);
-            setCGen(false);
             }
-        } else {
-                setGender(genDer);
-            setGen(false);
         }
-        if(!fnameRef.current.value.replace(/\s/g, "").length <= 0 && !lnameRef.current.value.replace(/\s/g, "").length <= 0 
-        && !regAdRef.current.value.replace(/\s/g, "").length <= 0 && !bdateRef.current.value.replace(/\s/g, "").length <= 0 
-        && !regPaRef.current.value.replace(/\s/g, "").length <= 0 && !conRef.current.value.replace(/\s/g, "").length <= 0 
-        && !regEmRef.current.value.replace(/\s/g, "").length <= 0 && !genRef.current.value.replace(/\s/g, "").length <= 0 ){
+        if( errFName === false && errLName === false && errRegAd === false && errBday === false  && errRegPa === false && errCon === false
+            && errRegEm === false && errGen === false && errCGen === false ){
             setshowPet(!showPet);
-            console.log(Gender);
         }
     }
 
-    const onUserImg = event => {
+const onImgChange = (event, setImgFile, setImgFileUp) => {
         const reader = new FileReader();
         reader.onload = () => {
             if(reader.readyState === 2){
-                setdpImg(reader.result);
+                setImgFile(reader.result);
             }
         }
-    reader.readAsDataURL(event.target.files[0])
+        reader.readAsDataURL(event.target.files[0])
+        setImgFileUp(event.target.files[0])
 }
 
-const onPetImg = event => {
-        const reader = new FileReader();
-        reader.onload = () => {
-            if(reader.readyState === 2){
-                setpetImg(reader.result);
-            }
-        }
-    reader.readAsDataURL(event.target.files[0])
+const checker = (e, vallid, setVal) => { //Checker of input value if blank or not
+    e.preventDefault();
+    if(e.target.value.replace(/\s/g, "").length <= 0){
+        vallid(true);
+        }else{
+    vallid(false);
+    setVal(e.target.value);
+    }
+}
+const chekCon = (e, vallid, setVal) => {
+    e.preventDefault();
+    if(e.target.value.replace(/\s/g, "").length <= 0){
+        vallid(true);
+        }else if(e.target.value.length >= 12 || e.target.value.length <=6){
+        vallid(true);
+        }else{
+    vallid(false);
+    setVal(e.target.value);
+    }
+}
+const chekPass = (e, vallid, setVal) => {
+    e.preventDefault();
+    if(e.target.value.replace(/\s/g, "").length <= 0){
+        vallid(true);
+        }else if(e.target.value.length >= 31 || e.target.value.length <=5){
+        vallid(true);
+        }else{
+    vallid(false);
+    setVal(e.target.value);
+    }
+}
+const checkEma = (e, vallid, setVal) => {
+    e.preventDefault();
+    let reg = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w\w+)+$/;
+  if (reg.test(e.target.value) === false) {
+    setVal('');
+    vallid(true);
+  }
+  else {
+    vallid(false);
+    setVal(e.target.value);
+  }
+}
+const showPasword = () => setvisiPas(!visiPas);
+const setDateBreed = (e) =>{
+    e.preventDefault();
+    if(e.target.value === 'Dog'){
+        setbreedData(BreedDataDog)
+    }
+    if(e.target.value === 'Cat'){
+        setbreedData(BreedDataCat)
+    }
 }
     return (
         <>
-            <div className={showPet ? 'reg-form-c show' : 'reg-form-c'} >
+            <form className={showPet ? 'reg-form-c show' : 'reg-form-c'} >
                 <div>
                     <div className="pet-reg fixs">
                         <div className="pet-title"><h1>User Information </h1></div>
                         <div className='avatarHolder'>
-                        <input style={{display: 'none'}} type='file' onChange = {onUserImg} ref={hiddenFileInput}/>
+                        <input style={{display: 'none'}} type='file'  ref={hiddenFileInput} onChange = {(e) => {onImgChange(e,setdpImg, setuserIMGUp)}} />
                         <img src={dpImg} alt='Profile' onClick={(e) => {hiddenFileInput.current.click();}}  />
                         </div>
 
-                        <input className='reg_in' type="text" name="txt-Fnme" placeholder='First Name:' ref={fnameRef} id="txtFname" />
+                        <input className='reg_in' type="text" name="txt-Fnme" placeholder='First Name:' ref={fnameRef} id="txtFname" onChange={ 
+                           (e) =>{checker(e, setFName, setFirstName)}} />
                         <div className={errFName ? 'valida sh' : 'valida'}>
                             <faIcons.FaExclamationCircle></faIcons.FaExclamationCircle></div>
-                        <input  className='reg_in' type="text" name="txt-Lnme" placeholder='Last Name:' ref={lnameRef} id="txtLname" />
+                        <input  className='reg_in' type="text" name="txt-Lnme" placeholder='Last Name:' ref={lnameRef} id="txtLname" onChange={ 
+                            (e) =>{checker(e, setLName, setLastName)}} />
                         <div className={errLName ? 'valida sh' : 'valida'}>
                             <faIcons.FaExclamationCircle></faIcons.FaExclamationCircle></div>
-                        <input  className='reg_in' type="text" name="txt-Emai" placeholder='Email Address:' ref={regEmRef} id="txtEmails" />
+                        <input  className='reg_in' type="text" name="txt-Emai" placeholder='Email Address:' ref={regEmRef} id="txtEmails" onChange={ 
+                            (e) =>{checkEma(e, setRegEm, setEmail)}} /> 
                         <div className={errRegEm ? 'valida sh' : 'valida'}>
                             <faIcons.FaExclamationCircle></faIcons.FaExclamationCircle></div>
-                        <input  className='reg_in' type="text" name="txt-Addr" placeholder='Address:' ref={regAdRef}  id="txtAddr" />
+                        <input  className='reg_in' type="text" name="txt-Addr" placeholder='Address:' ref={regAdRef}  id="txtAddr" onChange={ 
+                            (e) =>{checker(e, setRegAd, setAddr)}} />
                         <div className={errRegAd ? 'valida sh' : 'valida'}>
-                            <faIcons.FaExclamationCircle></faIcons.FaExclamationCircle></div>
-                        <input className='reg_in'  type="password" name="txt-Pwor" placeholder='Password:' ref={regPaRef} id="txtPword" />
+                            <faIcons.FaExclamationCircle></faIcons.FaExclamationCircle></div> 
+
+
+                            <div className='reg_in' id="txtPword" >
+                        <input  className='reg_pa'  type={visiPas ? 'text' : 'password'}  name="txt-Pwor" placeholder='Password:' ref={regPaRef} onChange={ 
+                            (e) =>{chekPass(e, setRegPa, setPWord)}}/>
+                            <faIcons.FaEye onClick={showPasword} className={visiPas ? 'eyey hida' : 'eyey'} title='Show Password' />
+                            <faIcons.FaEyeSlash onClick={showPasword} className={visiPas ? 'eyey' : 'eyey hida'} title='Hide Password' />
+                            </div>
                         <div className={errRegPa ? 'valida sh' : 'valida'}>
                             <faIcons.FaExclamationCircle></faIcons.FaExclamationCircle></div>
-                        <input className='reg_in'  type="tel" name="txt-Cnum" placeholder='Contact Number:' ref={conRef} id="txtCnum" />
+
+
+                        <input className='reg_in'  type="number" name="txt-Cnum" placeholder='Contact #: (09**-***-****)' ref={conRef} id="txtCnum" onChange={ 
+                            (e) =>{chekCon(e, setCon, setContact)}} />
                         <div className={errCon ? 'valida sh' : 'valida'}>
                             <faIcons.FaExclamationCircle></faIcons.FaExclamationCircle></div>
-                        <input className='reg_in'  type="date" name="txt-Bdate" placeholder='Birth Date:' ref={bdateRef} id="txtBdate" />
+                        <input className='reg_in'  type="date" name="txt-Bdate" placeholder='Birth Date:' ref={bdateRef} id="txtBdate" onChange={ 
+                            (e) =>{checker(e, setBday, setBDate)}} />
                         <div className={errBday ? 'valida sh' : 'valida'}>
                             <faIcons.FaExclamationCircle></faIcons.FaExclamationCircle></div>
-                        <select className='reg_in'  name="txt-Gend" onChange={cGend} id="txtGend" ref={genRef} defaultValue={''}>
+                        <select className='reg_in'  name="txt-Gend" onChange={cGend} id="txtGend" ref={genRef} defaultValue={''} >
                             <option value="" disabled>Gender:</option>
                             <option value="male">Male</option>
                             <option value="female">Female</option>
@@ -296,32 +370,46 @@ const onPetImg = event => {
                         </select>
                         <div className={errGen ? 'valida sh' : 'valida'}>
                             <faIcons.FaExclamationCircle></faIcons.FaExclamationCircle></div>
-                        <input  className={cgend ? 'reg_in' : 'reg_in gid'} type="text" name="txt-Gcus" ref={cusGRef} id="txtGcus" placeholder='Please specify:' />
+                        <input  className={cgend ? 'reg_in' : 'reg_in gid'} type="text" name="txt-Gcus" ref={cusGRef} id="txtGcus" placeholder='Please specify:' onChange={ 
+                            (e) =>{checker(e, setCGen, setGender)}} />
                         <div className={errCGen ? 'valida sh' : 'valida'}>
                             <faIcons.FaExclamationCircle></faIcons.FaExclamationCircle></div>
                     </div>
                 </div>
                 <div className="reg-footer">
-                    <button className='btn btn-sub' onClick={showError} >Next</button>
+                    <button className='btn btn-sub' type='button' onClick={showError} >Next</button>
                 </div>
-            </div>
-            <div className={showPet ? 'reg-form-c' : 'reg-form-c show'} >
+            </form>
+            <form className={showPet ? 'reg-form-c' : 'reg-form-c show'} >
                 <div className='flow-comn'>
-                    <div className="pet-reg">
+                    <div className="pet-reg borderfix">
                         <div className="pet-title"><h1>Pet Information </h1></div>
-
                         <div className='avatarHolder'>
-                        <input style={{display: 'none'}} type='file' onChange = {onPetImg} ref={hiddenFileInput2}/>
+                        <input style={{display: 'none'}} type='file' onChange = {(e) => {onImgChange(e,setpetImg, setpetIMGUp)}} ref={hiddenFileInput2}/>
                         <img src={petImg} alt='Profile' onClick={(e) => {hiddenFileInput2.current.click();}} />
                         </div>
 
-                        <input className='reg_in' type="text" name="txt-Anme" placeholder='Name:'  ref={petNameRef} id="txtAnme" />
+                        <input className='reg_in' type="text" name="txt-Anme" placeholder='Name:'  ref={petNameRef} id="txtAnme" onChange={ 
+                            (e) =>{checker(e, setPName, setPetName)}}  />
                         <div  className={errPName ? 'valida sh' : 'valida'}>
                             <faIcons.FaExclamationCircle></faIcons.FaExclamationCircle></div>
-                            <input className='reg_in'  type="date" name="txt-PDate" placeholder='Birth Date:' ref={petDateRef} id="txtBdate" />
+                            <input className='reg_in'  type="date" name="txt-PDate" placeholder='Birth Date:' ref={petDateRef} id="txtPBdate" onChange={ 
+                                (e) =>{checker(e, setPDate, setPBdate)}} />
                             <div className={errPDate ? 'valida sh' : 'valida'}>
                                 <faIcons.FaExclamationCircle></faIcons.FaExclamationCircle></div>
-                        <select className='reg_in' name="txt-Spec" id="txtSpec" ref={petSpeciRef}  defaultValue={''} >
+                            <select className='reg_in'  name="txt-Gend" id="txtPGend" ref={petGenderRef}  defaultValue={''} onChange={ 
+                                (e) =>{checker(e, setPGend, setPetGend)}} >
+                                <option className='placeH' value=""  disabled>Gender:</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                            </select>
+                            <div className={errPGend ? 'valida sh' : 'valida'}>
+                                <faIcons.FaExclamationCircle></faIcons.FaExclamationCircle></div>
+                        <select className='reg_in' name="txt-Spec" id="txtSpec" ref={petSpeciRef}  defaultValue={''} onChange={
+                            (e) =>{ 
+                                setDateBreed(e);
+                                checker(e, setPSpec, setPetSpec);
+                            }} >
                             <option value=""  disabled>Species:</option>
                             <option value="Dog">Dog</option>
                             <option value="Cat">Cat</option>
@@ -329,25 +417,23 @@ const onPetImg = event => {
                         <div className={errPSpec ? 'valida sh' : 'valida'}>
                             <faIcons.FaExclamationCircle></faIcons.FaExclamationCircle>
                         </div>
-                    <select className='reg_in' name="txt-Bred" id="txtBred" ref={petBreedRef} defaultValue={''} >
-                        <option value=""  disabled>Breed:</option>
-                        <option value="breed1">Breed 1</option>
-                        <option value="breed2">Breed 2</option>
+                    <select className='reg_in' name="txt-Bred" id="txtBred" ref={petBreedRef} defaultValue={''} onChange={ 
+                        (e) =>{checker(e, setPBred, setPetBreed)}} >
+                    {breedData.map((item, index) => {
+                        return (
+                            <option key={index} value={item.value}>{item.text}</option>
+                        )
+                    })}
                     </select>
                     <div className={errPBred ? 'valida sh' : 'valida'}>
                         <faIcons.FaExclamationCircle></faIcons.FaExclamationCircle>
                     </div>
-                        <select className='reg_in'  name="txt-Gend" id="txtPGend" ref={petGenderRef}  defaultValue={''}>
-                            <option className='placeH' value=""  disabled>Gender:</option>
-                            <option value="male">Male</option>
-                            <option value="female">Female</option>
-                        </select>
-                        <div className={errPGend ? 'valida sh' : 'valida'}>
+                        <input className='reg_in' type="number" name="txt-Weig" placeholder='Weight:(g)'  ref={petWeightRef} id="txtWeig" onChange={ 
+                            (e) =>{checker(e, setPWeight, setPetsWeight)}} />
+                        <div  className={errPWeight ? 'valida sh' : 'valida'}> 
                             <faIcons.FaExclamationCircle></faIcons.FaExclamationCircle></div>
-                        <input className='reg_in' type="number" name="txt-Weig" placeholder='Weight:(kg)'  ref={petWeightRef} id="txtWeig" />
-                        <div  className={errPWeight ? 'valida sh' : 'valida'}>
-                            <faIcons.FaExclamationCircle></faIcons.FaExclamationCircle></div>
-                        <input className='reg_in' type="number" name="txt-Heig" placeholder='Height:(kg)'  ref={petHeightRef} id="txtHeig" />
+                        <input className='reg_in' type="number" name="txt-Heig" placeholder='Height:(cm)'  ref={petHeightRef} id="txtHeig" onChange={ 
+                            (e) =>{checker(e, setPHeight, setPetsHeight)}} />
                         <div  className={errPHeight ? 'valida sh' : 'valida'}>
                             <faIcons.FaExclamationCircle></faIcons.FaExclamationCircle></div>
                         <div>
@@ -356,12 +442,12 @@ const onPetImg = event => {
                 </div>
                 <div className="reg-footer petf">
                     <div>
-                        <button className='btn btn-sub' onClick={petSHow} >Back</button>
-                        <button className='btn btn-sub' onClick={signUp} >Sign Up</button>
+                        <button className='btn btn-sub'  type='button' onClick={petSHow} >Back</button>
+                        <button className='btn btn-sub' type='button' onClick={(e) => signUp(e)} >Sign Up</button>
                     </div>
                     <div className="termscon">Terms and Conditions</div>
                 </div>
-            </div>
+            </form>
         </>
     )
 }

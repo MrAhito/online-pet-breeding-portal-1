@@ -43,7 +43,7 @@
     align-items: center;
 }
 .userNavIcons{
-    font-size: 3.5vh;
+    font-size: 4vh;
 }
 .userNavname{
     font-size: 1.05vw;
@@ -62,7 +62,8 @@
     cursor: pointer;
 }
 .CProfile{
-    padding: .5vw 1vw;
+    padding:0.4vh .75vw;
+    border-radius: 200vw;
 }
 .mainDiv{
     width: 450%;
@@ -90,4 +91,10 @@
 .notif_div.shiw{
  display: block;
  transition: 1s ease-in-out;
+}
+.userNavIconsImg{
+    width: 2.75vw;
+    height: 2.75vw;
+    margin: 0 0 0 -.50vw ;
+    border-radius: 50%;
 }

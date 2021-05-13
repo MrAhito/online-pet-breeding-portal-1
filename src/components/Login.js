@@ -12,8 +12,9 @@ function Login() {
 
     const [validate, setValid] = useState();
     const [showReg, setshowReg] = useState(false);
-    const sh = () => setshowReg(!showReg);
-
+    const sh = () => {
+         setshowReg(!showReg);
+        }
     const login = e => {
         e.preventDefault();
         const email =  emailRef.current.value;

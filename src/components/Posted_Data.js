@@ -15,7 +15,7 @@ fetchData()
    <>
    <ul>
       {Users.map(Users => (
-        <li key={Users.Email}>{Users.FirstName}</li>
+        <li key={Users.uid}>{Users.Firstname}</li>
       ))}
    </ul>
    </>

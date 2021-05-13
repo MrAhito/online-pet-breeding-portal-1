@@ -243,6 +243,7 @@ width: 15vh;
 
 #txtEmails, #txtPword, #txtAddr, #txtAnme{
  grid-column: 1/4;
+ width: 27.9vw;
 }
 
 .reg_in{
@@ -250,7 +251,12 @@ width: 15vh;
     font-size: 1.85vh;
     height: 5vh;
     display: flex;
+    background-color: #fff;
     margin: .55vh;
+    width: 12.2vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     border-radius: .5vw;
     padding-left: 1vw;
     outline: none;
@@ -268,6 +274,7 @@ width: 15vh;
 }
 .pet-reg > select{
     height: 5.4vh;
+    width: 13.5vw;
 }
 
 .petf{
@@ -287,4 +294,35 @@ width: 15vh;
     position: fixed;
     top: 7.8vw;
     
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type=number] {
+    -moz-appearance:textfield; /* Firefox */
+}
+.reg_pa{
+    font-size: 1.85vh;
+    margin-left: -.1vw;
+    border: none;
+    outline: none;
+    width: 90%;
+}
+.eyey{
+    cursor: pointer;
+    margin: auto;
+    font-size: 1.3vw;
+    user-select: none;
+}
+.eyey.hida{
+    display: none;
+}
+.eyey:hover{
+    color: var(--primaryColor);
+}
+.borderfix{
+    margin-right: 0;
 }

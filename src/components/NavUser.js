@@ -4,7 +4,7 @@ import * as aiIcons from 'react-icons/cg'
 import '../components/NavUser.css'
 import NotifDiv from './NotifDiv'
 import UserSetting from './UserSetting'
-// import firebaseDb, { auth } from '../firebase/firebase'
+import firebaseDb, { auth } from '../firebase/firebase'
 
 class NavUser extends Component {
 
@@ -12,19 +12,29 @@ class NavUser extends Component {
         super()
         this.state = {
             userName: '',
+            userProfile: '',
             titleName: '',
             visibke: false,
             visibleM: false,
             visibleS: false
         }
     }
- 
-    componentDidMount(){
-        this.setState({
-            userName: 'UserName',
-        })
+     getID () {
+       auth.onAuthStateChanged(user => {
+            console.log(user)
+           this.setState({
+            userName : user.displayName,
+            userProfile : user.photoURL
+           })
+       });
+        // this.setState({
+        //     userName: 'UserName',
+        // })
     }
-
+    
+    componentWillMount(){
+        this.getID();
+    } 
 
     changeVieae(ComName, visiMe, visiNO, visiSE) {
         this.setState({
@@ -35,7 +45,6 @@ class NavUser extends Component {
 
         })
     }
-
     render() {
         return (
             <div className="nav userNavCon">
@@ -61,7 +70,7 @@ class NavUser extends Component {
 
                 <div className='userIcons'>
                 <div className='CgICons CProfile'>
-                    <aiIcons.CgProfile className='userNavIcons' />
+                <img src={this.state.userProfile} alt='icon' className='userNavIconsImg'/>   
                     <span className='userNavname'>{this.state.userName}</span>
                 </div>
                 <div className='CgICons' onClick={(e) => this.changeVieae('Messages', false, !this.state.visibleM, false)}>
