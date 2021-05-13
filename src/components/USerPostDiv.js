@@ -16,9 +16,6 @@ class USerPostDiv extends Component {
               </div>
 
 
-            <div className='PostedDataa'>
-            <PostedData />
-            </div>
             </>
         )
     }
