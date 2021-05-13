@@ -7,21 +7,20 @@ class USerPostDiv extends Component {
         super()
         this.state = {
             userName: '',
-            userProfile: '',
-            titleName: '',
-            visibke: false,
-            visibleM: false,
-            visibleS: false
+            userProfile: ''
         }
     }
      getID () {
        auth.onAuthStateChanged(user => {
-            console.log(user)
-           this.setState({
-            userName : user.displayName,
-            userProfile : user.photoURL
-           })
-       });
+        if(!( user === null)){
+            this.setState({
+             userName : user.displayName,
+             userProfile : user.photoURL
+            })
+         }else{
+            
+         }
+        });
     }
     
     componentWillMount(){
