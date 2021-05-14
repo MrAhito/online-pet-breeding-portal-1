@@ -11,196 +11,44 @@ export const BreedDataDog = [
         text: 'Breed',
     },
     {
-        text: 'Affenpinscher',
-        value: 'Affenpinscher',
+        text: 'Beagle',
+        value: 'Beagle',
     },
     {
-        value: 'Afghan Hound',
-        text: 'Afghan Hound',
+        text: 'Poodle',
+        value: 'Poodle',
     },
     {
-        value: 'Airedale Terrier',
-        text: 'Airedale Terrier',
+        text: 'Pug',
+        value: 'Pug',
     },
     {
-        value: 'Akita',
-        text: 'Akita',
+        text: 'Golden Retriever',
+        value: 'Golden Retriever',
     },
     {
-        value: 'Alaskan Klee Kai',
-        text: 'Alaskan Klee Kai',
+        text: 'Dalmatian',
+        value: 'Dalmatian',
     },
     {
-        value: 'Alaskan Malamute',
-        text: 'Alaskan Malamute',
+        text: 'Shih Tzu',
+        value: 'Shih Tzu',
     },
     {
-        value: 'American Bulldog',
-        text: 'American Bulldog',
+        text: 'Chihuahua',
+        value: 'Chihuahua',
     },
     {
-        value: 'American English Coonhound',
-        text: 'American English Coonhound',
+        text: 'German Shepard',
+        value: 'German Shepard',
     },
     {
-        value: 'American Eskimo Dog',
-        text: 'American Eskimo Dog',
+        text: 'Doberman',
+        value: 'Doberman',
     },
     {
-        value: 'American Foxhound',
-        text: 'American Foxhound',
-    },
-    {
-        value: 'American Hairles Terrier',
-        text: 'American Hairles Terrier',
-    },
-    {
-        value: 'American Leopard Hound',
-        text: 'American Leopard Hound',
-    },
-    {
-        value: 'Akita',
-        text: 'Akita',
-    },
-    {
-        value: 'Akita',
-        text: 'Akita',
-    },
-    {
-        value: 'Akita',
-        text: 'Akita',
-    },
-    {
-        value: 'Akita',
-        text: 'Akita',
-    },
-    {
-        value: 'Akita',
-        text: 'Akita',
-    },
-    {
-        value: 'Akita',
-        text: 'Akita',
-    },
-    {
-        value: 'Akita',
-        text: 'Akita',
-    },
-    {
-        value: 'Akita',
-        text: 'Akita',
-    },
-    {
-        value: 'Akita',
-        text: 'Akita',
-    },
-    {
-        value: 'Akita',
-        text: 'Akita',
-    },
-    {
-        value: 'Akita',
-        text: 'Akita',
-    },
-    {
-        value: 'Akita',
-        text: 'Akita',
-    },
-    {
-        value: 'Akita',
-        text: 'Akita',
-    },
-    {
-        value: 'Akita',
-        text: 'Akita',
-    },
-    {
-        value: 'Akita',
-        text: 'Akita',
-    },
-    {
-        value: 'Akita',
-        text: 'Akita',
-    },
-    {
-        value: 'Akita',
-        text: 'Akita',
-    },
-    {
-        value: 'Akita',
-        text: 'Akita',
-    },
-    {
-        value: 'Akita',
-        text: 'Akita',
-    },
-    {
-        value: 'Akita',
-        text: 'Akita',
-    },
-    {
-        value: 'Akita',
-        text: 'Akita',
-    },
-    {
-        value: 'Akita',
-        text: 'Akita',
-    },
-    {
-        value: 'Akita',
-        text: 'Akita',
-    },
-    {
-        value: 'Akita',
-        text: 'Akita',
-    },
-    {
-        value: 'Akita',
-        text: 'Akita',
-    },
-    {
-        value: 'Akita',
-        text: 'Akita',
-    },
-    {
-        value: 'Akita',
-        text: 'Akita',
-    },
-    {
-        value: 'Akita',
-        text: 'Akita',
-    },
-    {
-        value: 'Akita',
-        text: 'Akita',
-    },
-    {
-        value: 'Akita',
-        text: 'Akita',
-    },
-    {
-        value: 'Akita',
-        text: 'Akita',
-    },
-    {
-        value: 'Akita',
-        text: 'Akita',
-    },
-    {
-        value: 'Akita',
-        text: 'Akita',
-    },
-    {
-        value: 'Akita',
-        text: 'Akita',
-    },
-    {
-        value: 'Akita',
-        text: 'Akita',
-    },
-    {
-        value: 'Akita',
-        text: 'Akita',
+        text: 'Labrador Retriever',
+        value: 'Labrador Retriever',
     },
 ]
 
@@ -210,19 +58,51 @@ export const BreedDataCat = [
         text: 'Breed',
     },
     {
-        value: 'dog1',
-        text: 'Dog Breed 1',
+        value: 'Siamese',
+        text: 'Siamese',
     },
     {
-        value: 'dog2',
-        text: 'Dog Breed 2',
+        value: 'Persian',
+        text: 'Persian',
     },
     {
-        value: 'dog3',
-        text: 'Dog Breed 3',
+        value: 'Maine Coon',
+        text: 'Maine Coon',
     },
     {
-        value: 'dog4',
-        text: 'Dog Breed 4',
+        value: 'Ragdoll',
+        text: 'Ragdoll',
+    },
+    {
+        value: 'Bengal',
+        text: 'Bengal',
+    },
+    {
+        value: 'Abyssinian',
+        text: 'Abyssinian',
+    },
+    {
+        value: 'Birman',
+        text: 'Birman',
+    },
+    {
+        value: 'Oriental Shorthair',
+        text: 'Oriental Shorthair',
+    },
+    {
+        value: 'Sphynx',
+        text: 'Sphynx',
+    },
+    {
+        value: 'Devon Rex',
+        text: 'Devon Rex',
+    },
+    {
+        value: 'Himalayan',
+        text: 'Himalayan',
+    },
+    {
+        value: 'American Shorthair',
+        text: 'American Shorthair',
     },
 ]

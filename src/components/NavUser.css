@@ -61,24 +61,24 @@
     padding: .65vw;
     color: var(--tertiaryColor);
     text-decoration: none;
-    border-radius: 2.5vw;
+    border-radius: .5vw;
     align-items: center;
-    transition: .2s ease-in-out;
+    transition: .1s ease-in-out;
     cursor: pointer;
 }
 .CProfile{
     padding:0.4vh .75vw;
     border-radius: 200vw;
 }
-.mainDiv{
-    width: 450%;
-    border-radius: .3vw;
+.mainDiv, .breedDiv{
+    width: 45%;
     align-items: center;
     justify-content: center;
 }
 .CgICons:hover{
     background-color: var(--borderColor);
-    transition: .3s ease-in-out;
+    color: var(--tertiaryColor);
+    transition: .2s ease-in-out;
 }
 
 .CgICons span{
@@ -119,13 +119,13 @@
     display: flex;
     position: fixed;
 }
-.fixes{
+.fixes, .mainfix{
     background-color: var(--primaryColor1);
     transition: .3s ease-in-out;
     color:var(--primaryColor);
 }
-.fixes:hover{
-    background-color: var(--borderColor);
+.fixes:hover, .mainfix:hover{
+    background-color: var(--primaryColor1);
     transition: .3s ease-in-out;
-    color: var(--tertiaryColor);
+    color:var(--primaryColor);
 }

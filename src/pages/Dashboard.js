@@ -5,7 +5,7 @@ class Dashboard extends Component {
     render() {
         return (
             <>
-                <NavUser />
+                <NavUser classMain='mainfix' />
                 <UserDashboard />
             </>
         )

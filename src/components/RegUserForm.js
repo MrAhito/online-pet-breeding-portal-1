@@ -364,8 +364,8 @@ const setDateBreed = (e) =>{
                             <faIcons.FaExclamationCircle></faIcons.FaExclamationCircle></div>
                         <select className='reg_in'  name="txt-Gend" onChange={cGend} id="txtGend" ref={genRef} defaultValue={''} >
                             <option value="" disabled>Gender:</option>
-                            <option value="male">Male</option>
-                            <option value="female">Female</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
                             <option value="custome">Custom</option>
                         </select>
                         <div className={errGen ? 'valida sh' : 'valida'}>

@@ -62,10 +62,10 @@ class NavUser extends Component {
 
 
                 <div className='cs_div'>
-                <Link to='/dashboard' className='CgICons mainDiv'>
+                    <Link to='/dashboard' className={'CgICons mainDiv ' + this.props.classMain}>
                 <aiIcons.CgFeed className='userNavIcons'  alt='newsfeed' title='Home'/>
                 </Link>
-                <div className='CgICons mainDiv'>
+                    <div className='CgICons breedDiv'>
                 <aiIcons.CgTimelapse className='userNavIcons'  alt='find' title='Find Breeder   '/>
                 </div>
                 </div>

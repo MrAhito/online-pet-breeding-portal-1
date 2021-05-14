@@ -1,24 +1,26 @@
 .New_post{
     background-color: var(--secondaryColor);
     border-radius: .4vw;
-    height: 15vh;
     padding: 1.25vw 3vw;
 }
 .user_post, .btton_post{
     display: flex;
+    height: 3.4vw;
+    justify-content: center;
     flex-direction: row;
     align-items: center;
-    margin-bottom: .75vw;
 }
 .iconUserPost{
+    display: flex;
+    flex-direction: column;
     background-color:#fff;
-    border: .2vh solid var(--borderColor);
-    width: 2.6vw;
+    padding : .2vw;
+    border: .1vh solid var(--borderColor);
+    width: 2.8vw;
+    border-radius: 50%;
     user-select: none;
     cursor:  pointer;
-    border-radius: 100%;
-    height: 2.5vw;
-    padding: .15vw;
+    height: 2.7vw;
 }
 .inputUserPost{
     width: 85%;
@@ -29,6 +31,20 @@
     padding: .6vw 1vw;
     border: .2vh solid var(--borderColor);
 }
-.btton_post{
-    border-top: .2vh solid var(--borderColor);
+.btnss{
+    display: flex;
+    width: 20vw;
+    padding: .6vw;
+    margin: auto;
+    border: .2vh solid var(--borderColor);
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.btnIcon{
+font-size: 1.5vw;
+}
+.btnLabel{
+    font-size: 1.2vw;
+
 }

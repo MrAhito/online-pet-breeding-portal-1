@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import * as aiIcons from 'react-icons/cg'
+import * as iIcons from 'react-icons/fi'
+import { Link } from 'react-router-dom';
 import { auth } from '../firebase/firebase'
 import './USerPostDiv.css'
 
@@ -34,11 +35,17 @@ class USerPostDiv extends Component {
             <>
               <div className='New_post'>
                 <div className='user_post'>
-                        <img src={this.state.userProfile} alt='icon' className='iconUserPost'/>
+                        <Link to='/userprofile'>
+                            <img src={this.state.userProfile} alt='icon' onClick={this.toProfile} className='iconUserPost' />
+                        </Link>
                         <input type='text' name='textPost' className='inputUserPost' placeholder='Create a Post  here....'></input>
                 </div>
-                <div className='buttonsPost'>
-                        <div className='addImage'><aiIcons.CgImage/></div>
+                    <div className='btton_post'>
+                        <div className='btnss'>
+                            <iIcons.FiImage className='btnIcon' /><span className='btnLabel'>Add Image</span>
+                        </div>
+                        <div className='btnss'><iIcons.FiTag className='btnIcon' /><span className='btnLabel'>Add Image</span></div>
+
                     </div>
               </div>
             </>
