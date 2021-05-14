@@ -18,7 +18,7 @@ function UserSetting(props) {
         <div className='setinds'>
            <div className='title_div'>{props.titleName}</div>
                 <div onClick={logOut} className='title_div'>
-                    Log Out
+
                 </div>
         </div>
         </>
